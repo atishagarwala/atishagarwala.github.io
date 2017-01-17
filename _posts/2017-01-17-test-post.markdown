@@ -15,3 +15,7 @@ def a_bit_of_code(some_val):
 [jekyll-docs]: http://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+And now for some Latex $\int\tau u\bar{f}\hat{f}$:
+
+$$ e = mc^{2} $$
