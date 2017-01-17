@@ -9,7 +9,7 @@
 title: >
   Atish Agarwala's blog
 email: atisha@stanford.edu
-theme: theme-modernist
+theme: jekyll-theme-modernist
 description: > # this means to ignore newlines until "baseurl:"
   Blog about science and math.
 baseurl: "" # the subpath of your site, e.g. /blog
