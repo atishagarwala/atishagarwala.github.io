@@ -15,9 +15,3 @@ $$ e = mc^{2} $$
 def a_bit_of_code(some_val):
   return some_val
 {% endhighlight %}
-
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
-
