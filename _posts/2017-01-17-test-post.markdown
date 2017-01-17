@@ -6,6 +6,11 @@ categories: trying jekyll
 ---
 File is in `/_posts`.
 
+And now for some Latex $\int\tau u\bar{f}\hat{f}$:
+
+$$ e = mc^{2} $$
+
+
 {% highlight ruby %}
 def a_bit_of_code(some_val):
   return some_val
@@ -16,6 +21,3 @@ def a_bit_of_code(some_val):
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
 
-And now for some Latex $\int\tau u\bar{f}\hat{f}$:
-
-$$ e = mc^{2} $$
