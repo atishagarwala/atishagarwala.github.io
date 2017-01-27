@@ -8,7 +8,7 @@ comments: true
 
 Just publicly released my fitness assay code!
 
-[https://github.com/barcoding-bfa/fitness-assay-python]
+https://github.com/barcoding-bfa/fitness-assay-python
 
 This is essentially the first bit of science I've done that's been published, and my first time releasing code into the wild.
 Kind of cool to see the first successful project of my PhD actually out there.
