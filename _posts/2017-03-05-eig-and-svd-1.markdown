@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Some thoughts on eigenvalues and SVD"
+date:   2017-03-05
+categories: linearalgebra spectra
+comments: true
+---
+
+I've been thinking a bit about spectra and singular values as I've been working
+on some ideas related to ecology and neuroscience, and I've decided to write up
+my musings. I've realized that I've never really sat down and thought about SVD,
+as I usually deal with Hermitian, anti-Hermitian, or orthogonal matrices
+which are all normal (so the singular vectors are just eigenvectors).
+In this post I'll just go through some thoughts on ideas in linear algebra, and
+in a later post I may expand on the neuroscience and ecology ideas that got me
+started thinking about this.
+
+## Eigenvectors and invariant subspaces
+
+I'll start by first reviewing some basic things about eigenvectors. Given
+a linear operator $\textbf{M}$, a vector $\textbf{x}$ is an _eigenvector_
+if we have $\textbf{M}\textbf{x} = \lambda \textbf{x}$, where $\lambda$
+is the associated _eigenvalue_. This definition is good enough for finite
+dimensional vector spaces. Otherwise, we can generalize the definition of
+eigenvalue to that of the _spectrum_ of an operator, which is the collection
+of values $\lambda$ such that $\textbf{M}-\lambda$ is not invertible. Eigenvalues
+are always in the spectrum, but in infinite dimensional vector spaces we can
+get into funky situations where there are elements in the spectrum which don't
+correspond to any eigenvectors.
+
+However, we'll stick to finite dimensional vector spaces for this post (over
+$\mathbb{C}$, for the pedants at home). In a
+finite dimensional vector space, there is always at least one eigenvalue. One
+way to see this is to think about the determinant of $\textbf{M}-\lambda$. This
+is a polynomial, so we know that we always have at least one root over the
+complex numbers. With each eigenvalue, there is associated at least one
+eigenvector.
+
+That's where our guarantees end. If we have no degenerate eigenvalues
+(one eigenvalue for )
