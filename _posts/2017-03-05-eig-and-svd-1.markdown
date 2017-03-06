@@ -26,11 +26,11 @@ be lower case bold $\textbf{x}$, and scalars will just be normal
 
 I'll start by first reviewing some basic things about eigenvectors. Given
 a linear operator $\textbf{M}$, sending $\mathbb{R}^{N}$
-to $\mathbb{R}^{N}$, a vector $\textbf{x}$ is an \_eigenvector\_
+to $\mathbb{R}^{N}$, a vector $\textbf{x}$ is an _eigenvector_
 if we have $\textbf{M}\textbf{x} = \lambda \textbf{x}$, where $\lambda$
-is the associated \_eigenvalue\_. This definition is good enough for finite
+is the associated _eigenvalue_. This definition is good enough for finite
 dimensional vector spaces. Otherwise, we can generalize the definition of
-eigenvalue to that of the \_spectrum\_ of an operator, which is the collection
+eigenvalue to that of the _spectrum_ of an operator, which is the collection
 of values $\lambda$ such that $\textbf{M}-\lambda$ is not invertible. Eigenvalues
 are always in the spectrum, but in infinite dimensional vector spaces we can
 get into funky situations where there are elements in the spectrum which don't
@@ -46,13 +46,13 @@ eigenvector.
 
 If we have no degenerate eigenvalues
 (one unique eigenvalue for each dimension), then we are guaranteed to have
-an \_eigenbasis\_ - a set of linearly independent eigenvectors which span our space.
+an _eigenbasis_ - a set of linearly independent eigenvectors which span our space.
 In the eigenbasis coordinate system, $\textbf{M}$ has a very simple form: it is
 diagonal with entries equal to the eigenvalues $\lambda$. This is the source
 of the power of eigenvalues and eigenvectors; they give us a coordinate system
 where the linear operator can be described as simply as possible, as $N$
 independent multiplications as opposed to $N^{2}$ for a "typical" matrix.
-In many linear or near-linear dynamical systems, understanding the \_eigenmodes\_
+In many linear or near-linear dynamical systems, understanding the _eigenmodes_
 (dynamics in the eigenbasis) individually leads to direct understanding of the
 global dynamics.
 
@@ -60,15 +60,15 @@ However, if we have a degeneracy (repeated eigenvalues, ie multiple roots in
 the characteristic polynomial), then we are not guaranteed to have a complete
 eigenbasis. In the worst case scenario we are guaranteed a nested set of invariant
 subspaces. That is, we have some collection of vectors
-$\{\textbf{v}\_{\lambda,i}\}$ such that
+$\{\textbf{v}_{\lambda,i}\}$ such that
 
 $$
-\textbf{M}\left(\text{span}\{\textbf{v}\_{\lambda,i}\}\_{i\leq j}\right)\subseteq\textbf{M}\left(\text{span}\{\textbf{v}\_{\lambda,i}\}\_{i\leq k}\right)
+\textbf{M}\left(\text{span}\{\textbf{v}_{\lambda,i}\}_{i\leq j}\right)\subseteq\textbf{M}\left(\text{span}\{\textbf{v}_{\lambda,i}\}_{i\leq k}\right)
 $$
 
 where $j\leq k$. More concretely, this means we can find a basis where
 $\textbf{M}$ is almost diagonal, possible with 1's on the off diagonal.
-This is known as the \_Jordan canonical form\_, and the blocks look like
+This is known as the _Jordan canonical form_, and the blocks look like
 
 $$
 \begin{pmatrix}
@@ -80,12 +80,12 @@ $$
 \end{pmatrix}
 $$
 
-The non-diagonalizability is related to \_nilpotent\_ elements - submatrices which
+The non-diagonalizability is related to _nilpotent_ elements - submatrices which
 are non-zero, but become zero when raised to some power. A simple example is
 the 3-d matrix
 
 $$
-\textbf{N}\_{3} = \begin{pmatrix}
+\textbf{N}_{3} = \begin{pmatrix}
 0 & 1 & 0\\
 0 & 0 & 1\\
 0 & 0 & 0
@@ -96,15 +96,15 @@ This matrix only has one eigenvalue (0) and one eigenvector (the first
 coordinate). It is already in Jordan form. We can compute its powers as
 
 $$
-\textbf{N}\_{3} = \begin{pmatrix}
+\textbf{N}_{3} = \begin{pmatrix}
 0 & 1 & 0\\
 0 & 0 & 1\\
 0 & 0 & 0
-\end{pmatrix},~\textbf{N}\_{3}^{2} = \begin{pmatrix}
+\end{pmatrix},~\textbf{N}_{3}^{2} = \begin{pmatrix}
 0 & 0 & 1\\
 0 & 0 & 0\\
 0 & 0 & 0
-\end{pmatrix},~\textbf{N}\_{3}^{3} = \begin{pmatrix}
+\end{pmatrix},~\textbf{N}_{3}^{3} = \begin{pmatrix}
 0 & 0 & 0\\
 0 & 0 & 0\\
 0 & 0 & 0
@@ -139,21 +139,21 @@ set of _invariant subspaces_ - linear subspaces that map onto themselves.
 How can we construct such a set of nested invariant subspaces? One way
 is to construct one inductively. Suppose that we have an invariant subspace
 of dimension $k$. We can find one of dimension $k+1$ in the following way.
-Let $\textbf{P}\_{k}$ be the orthogonal projection onto our $k$ dimensional
-invariant subspace $V\_{k}$.
-That is, on $V\_{k}$ it is the identity;
+Let $\textbf{P}_{k}$ be the orthogonal projection onto our $k$ dimensional
+invariant subspace $V_{k}$.
+That is, on $V_{k}$ it is the identity;
 orthogonal vectors map to 0. Then consider
 
 $$
-\textbf{M}\_{k+1}\equiv (\textbf{Id}-\textbf{P}\_{k})\textbf{M}
+\textbf{M}_{k+1}\equiv (\textbf{Id}-\textbf{P}_{k})\textbf{M}
 $$
 
-This linear map outputs onto the orthogonal subspace $(V\_{k})\_{\perp}$.
-Therefore, restricted to $(V\_{k})\_{\perp}$ it is a map from that subspace
-onto itself. It has some eigenvector $v\_{k+1}$. While $v\_{k+1}$ is an eigenvector
-of $\textbf{M}\_{k+1}$, it is not an eigenvector of $\textbf{M}$; however,
-it has no other projection onto $(V\_{k})\_{\perp}$. Therefore,
-$\textbf{M}$ maps $V\_{k}\oplus\{v\_{k+1}\}$ onto itself; we now have
+This linear map outputs onto the orthogonal subspace $(V_{k})_{\perp}$.
+Therefore, restricted to $(V_{k})_{\perp}$ it is a map from that subspace
+onto itself. It has some eigenvector $v_{k+1}$. While $v_{k+1}$ is an eigenvector
+of $\textbf{M}_{k+1}$, it is not an eigenvector of $\textbf{M}$; however,
+it has no other projection onto $(V_{k})_{\perp}$. Therefore,
+$\textbf{M}$ maps $V_{k}\oplus\{v_{k+1}\}$ onto itself; we now have
 a $k+1$ dimensional subspace!
 
 Our base case is a 1-dimensional invariant subspace; that is, an eigenvector.
@@ -168,13 +168,13 @@ $$
 \textbf{M} = \textbf{U}\textbf{T}\textbf{U}^{\dagger}
 $$
 
-where $\textbf{T}$ is upper triangular, and $\textbf{U}$ is a \_unitary\_ matrix
+where $\textbf{T}$ is upper triangular, and $\textbf{U}$ is a _unitary_ matrix
 (generalized rotation for
 complex vector spaces, $\textbf{U}^{\dagger}\textbf{U} = \textbf{Id}$). Here
 $\dagger$ is the adjoint
 (transpose + complex conjugate).
 
-Related to this decomposition is the \_QR decomposition\_ where $\textbf{M}$
+Related to this decomposition is the _QR decomposition_ where $\textbf{M}$
 can be written as $\textbf{Q}\textbf{R}$ - where the first matrix is
 orthogonal and the second is upper triangular. While our above decomposition
 scheme dependeded on the eigenvectors chosen, the QR decomposition is
@@ -187,10 +187,10 @@ also exist (L being lower triangular).
 In the above decompositions, we've secretly added a hidden structure:
 an inner product. Unitary matrices (and even the adjoint) implicitly assume
 that some inner product exists. After all, a rotation is an operator that leaves
-\_lengths\_ invariant!
+_lengths_ invariant!
 
 The most commonly used type of unitary transformation of a matrix is
-the \_singular value decomposition\_ (SVD). We decompose our matrix
+the _singular value decomposition_ (SVD). We decompose our matrix
 $\textbf{M}$ as
 
 $$
@@ -202,14 +202,14 @@ is diagonal. In order to make the decomposition unique up to
 complex phases, one picks the
 $\mathbf{\Lambda}$ to be positive and ordered (which can be accomplished
 by permutation and multiplying phases into the unitary matrices).
-The columns of $\textbf{V}$ are the \_right singular vectors\_
-and the columns of $\textbf{U}$ are the \_left singular vectors\_.
+The columns of $\textbf{V}$ are the _right singular vectors_
+and the columns of $\textbf{U}$ are the _left singular vectors_.
 
 There are two ways to think about SVD, and the singular values themselves. One
 is as solutions to the optimization problem
 
 $$
-\textbf{u}\_{c},\textbf{v}\_{c} = \underset{\textbf{u},\textbf{v}}{\arg\max}
+\textbf{u}_{c},\textbf{v}_{c} = \underset{\textbf{u},\textbf{v}}{\arg\max}
 ~\textbf{u}^{\dagger}\textbf{M}\textbf{v}
 $$
 
@@ -219,14 +219,14 @@ the pairs of vectors $\textbf{u}$ and $\textbf{v}$ give us the sets of
 left and right singular vectors respectively. These vectors obey the equations
 
 $$
-\lambda\_{u}\textbf{u}\_{c} = \textbf{M}\textbf{v}\_{c},~\lambda\_{v}\textbf{v}\_{c} = \textbf{M}^{\dagger}\textbf{u}\_{c}
+\lambda_{u}\textbf{u}_{c} = \textbf{M}\textbf{v}_{c},~\lambda_{v}\textbf{v}_{c} = \textbf{M}^{\dagger}\textbf{u}_{c}
 $$
 
 If we pick the pair that gives us the maximal value, we can "shave it off"
-from the space: we know that inputting in $\textbf{v}\_{c}$ gets us
-an output proportional to $\textbf{u}\_{c}$. However, if we have an input
-orthogonal to $\textbf{v}\_{c}$, its output will be orthogonal to
-$\textbf{u}\_{c}$ by the second equation. Therefore we can take one dimension
+from the space: we know that inputting in $\textbf{v}_{c}$ gets us
+an output proportional to $\textbf{u}_{c}$. However, if we have an input
+orthogonal to $\textbf{v}_{c}$, its output will be orthogonal to
+$\textbf{u}_{c}$ by the second equation. Therefore we can take one dimension
 out of the input space and one out of the output space; we can iterate
 and construct the SVD as defined above.
 
@@ -238,7 +238,7 @@ correctly generalizes to the case where the matrices are not symmetric.
 
 Another way to get the singular values and vectors is to consider
 the matrices $\textbf{M}\textbf{M}^{\dagger}$ and
-$\textbf{M}^{\dagger}\textbf{M}$. These are both \_Hermitian\_ matrices
+$\textbf{M}^{\dagger}\textbf{M}$. These are both _Hermitian_ matrices
 (generalization of symmetric to complex valued). Hermitian matrices
 all have a complete, orthogonal eigenbasis with real eigenvalues.
 If we cheat and plug in the SVD form of $\textbf{M}$ into each
@@ -301,7 +301,7 @@ dimensions of $\textbf{M}$ - the structure fundamentally can only have
 the dimensionality of the simplest vector space involved!
 
 The singular values and eigenvalues are only the same when the
-matrix is \_normal\_ - that is, it has an orthogonal eigenbasis. In this case
+matrix is _normal_ - that is, it has an orthogonal eigenbasis. In this case
 $\textbf{U} = \textbf{V}$. In fact, thinking about singular values gives
 us another way to characterize normal dynamics: an operator $\textbf{M}$
 is normal if and only if
@@ -318,11 +318,11 @@ matrices from which they are derived should be the same too.
 All of these points come up when we use SVD in the "real world".
 The most common useage of singular value decomposition is to analyze and
 reduce the dimensionality of data. Consider a data matrix $\textbf{M}$
-constructed by "gluing together" data (column) vectors $\textbf{v}\_{i}$:
+constructed by "gluing together" data (column) vectors $\textbf{v}_{i}$:
 
 $$
 \textbf{M} = \begin{pmatrix}
-\textbf{v}\_{1}  & \textbf{v}\_{2}  & \textbf{v}\_{2} & ...
+\textbf{v}_{1}  & \textbf{v}_{2}  & \textbf{v}_{2} & ...
 \end{pmatrix}
 $$
 
@@ -337,8 +337,8 @@ the eigenvectors of $\textbf{M}\textbf{M}^{\dagger}$. In our data matrix,
 the $ij$th entry of this matrix corresponds to
 
 $$
-(\textbf{M}\textbf{M}^{\dagger})\_{ij} = \sum\_{\alpha}(\textbf{v}\_{\alpha})\_{i}
-(\textbf{v}\_{\alpha})\_{j}
+(\textbf{M}\textbf{M}^{\dagger})_{ij} = \sum_{\alpha}(\textbf{v}_{\alpha})_{i}
+(\textbf{v}_{\alpha})_{j}
 $$
 
 If the mean is subtracted out of our data, this is the covariance between
@@ -346,7 +346,7 @@ coordinates $i$ and $j$! Therefore, the $\textbf{U}$ give us an ordered basis
 which contributes to the covariance. Projecting our data into some subset of the
 $\textbf{U}$ then preserves the covariance structure, while reducing
 dimensionality. This is the idea behind the popular dimensionality reduction
-technique \_PCA\_. The eigenvectors $\textbf{U}$ are called \_principal components\_
+technique _PCA_. The eigenvectors $\textbf{U}$ are called _principal components_
 (PCs). PCA is the appropriate thing to do when Gaussian distributions
 are involved, but is surprisingly useful in situations where that is not the
 case.
@@ -357,7 +357,7 @@ will basically be the same; PCs will be in direct 1-1 correspondence.
 However, any non-unitary linear
 transformation will change the structure of the PCs. The principal values will
 be different, and the PCs won't map to each other 1-1. This is just for
-arbitrary \_linear\_ transforms! Non-linear transforms will be even less related.
+arbitrary _linear_ transforms! Non-linear transforms will be even less related.
 That's why if you're doing PCA on data which isn't Gaussian distributed,
 it may be worth randomly transforming the data, doing PCA, and seeing if the
 conclusions you draw are the same.
@@ -389,7 +389,7 @@ $\mathbf{\lambda}$. Let $\textbf{y} = \textbf{B}^{-1}\textbf{x}$.
 Then we have
 
 $$
-y\_{i}(t) = c\_{i}e^{\lambda\_{i}t}
+y_{i}(t) = c_{i}e^{\lambda_{i}t}
 $$
 
 We can use this basis to answer our question.
@@ -398,7 +398,7 @@ Consider first the case where $\textbf{M}$ is normal. Then, in the coordinate
 system of the $\textbf{y}$, the inner product is just the standard inner product.
 If $\textbf{w}$ does not affect the dynamics, that means that $\textbf{w}$
 does not project much onto components of $\textbf{y}$ which have
-large $\lambda\_{i}$. Let $\textbf{w}' = \textbf{B}^{-1}\textbf{w}$; then we have
+large $\lambda_{i}$. Let $\textbf{w}' = \textbf{B}^{-1}\textbf{w}$; then we have
 
 $$
 \textbf{w}^{\dagger}\textbf{x} = \textbf{w}'^{\dagger}\textbf{y}
@@ -407,7 +407,7 @@ $$
 which is given by
 
 $$
-\textbf{w}^{\dagger}\textbf{x} = \sum\_{i}(\textbf{w}')\_{i}c\_{i}e^{\lambda\_{i}t}
+\textbf{w}^{\dagger}\textbf{x} = \sum_{i}(\textbf{w}')_{i}c_{i}e^{\lambda_{i}t}
 $$
 
 We know this is small since $\textbf{w}$ does not project much onto the
