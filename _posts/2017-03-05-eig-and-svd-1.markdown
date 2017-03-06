@@ -15,10 +15,18 @@ In this post I'll just go through some thoughts on ideas in linear algebra, and
 in a later post I may expand on the neuroscience and ecology ideas that got me
 started thinking about this.
 
-## Eigenvectors and invariant subspaces
+## Definitions
+
+We'll be talking about linear operators (matrices, in coordinates), which
+I'll denote by boldface capital letters like $\textbf{M}$. Vectors will
+be lower case bold $\textbf{x}$, and scalars will just be normal
+"mathed" characters like $\lambda$.
+
+## Eigenvectors and Jordan form
 
 I'll start by first reviewing some basic things about eigenvectors. Given
-a linear operator $\textbf{M}$, a vector $\textbf{x}$ is an _eigenvector_
+a linear operator $\textbf{M}$, sending $\mathbb{R}^{N}$
+to $\mathbb{R}^{N}$, a vector $\textbf{x}$ is an _eigenvector_
 if we have $\textbf{M}\textbf{x} = \lambda \textbf{x}$, where $\lambda$
 is the associated _eigenvalue_. This definition is good enough for finite
 dimensional vector spaces. Otherwise, we can generalize the definition of
@@ -36,5 +44,373 @@ is a polynomial, so we know that we always have at least one root over the
 complex numbers. With each eigenvalue, there is associated at least one
 eigenvector.
 
-That's where our guarantees end. If we have no degenerate eigenvalues
-(one eigenvalue for )
+If we have no degenerate eigenvalues
+(one unique eigenvalue for each dimension), then we are guaranteed to have
+an _eigenbasis_ - a set of linearly independent eigenvectors which span our space.
+In the eigenbasis coordinate system, $\textbf{M}$ has a very simple form: it is
+diagonal with entries equal to the eigenvalues $\lambda$. This is the source
+of the power of eigenvalues and eigenvectors; they give us a coordinate system
+where the linear operator can be described as simply as possible, as $N$
+independent multiplications as opposed to $N^{2}$ for a "typical" matrix.
+In many linear or near-linear dynamical systems, understanding the _eigenmodes_
+(dynamics in the eigenbasis) individually leads to direct understanding of the
+global dynamics.
+
+However, if we have a degeneracy (repeated eigenvalues, ie multiple roots in
+the characteristic polynomial), then we are not guaranteed to have a complete
+eigenbasis. In the worst case scenario we are guaranteed a nested set of invariant
+subspaces. That is, we have some collection of vectors
+$\{\textbf{v}_{\lambda,i}\}$ such that
+$$
+\textbf{M}\left(\text{span}\{\textbf{v}_{\lambda,i}\}_{i\leq j}\right)\subseteq\textbf{M}\left(\text{span}\{\textbf{v}_{\lambda,i}\}_{i\leq k}\right)
+$$
+where $j\leq k$. More concretely, this means we can find a basis where
+$\textbf{M}$ is almost diagonal, possible with 1's on the off diagonal.
+This is known as the _Jordan canonical form_, and the blocks look like
+$$
+\begin{pmatrix}
+...\\
+... & \lambda & 1 & 0 & ...\\
+... & 0 & \lambda & 1 & 0 & ...\\
+... & 0 & 0 & \lambda & 1 & 0 & ...\\
+...
+\end{pmatrix}
+$$
+The non-diagonalizability is related to _nilpotent_ elements - submatrices which
+are non-zero, but become zero when raised to some power. A simple example is
+the 3-d matrix
+$$
+\textbf{N}_{3} = \begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{pmatrix}
+$$
+This matrix only has one eigenvalue (0) and one eigenvector (the first
+coordinate). It is already in Jordan form. We can compute its powers as
+$$
+\textbf{N}_{3} = \begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{pmatrix},~\textbf{N}_{3}^{2} = \begin{pmatrix}
+0 & 0 & 1\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix},~\textbf{N}_{3}^{3} = \begin{pmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}
+$$
+The matrix is evidently a shift operator. It becomes 0 after the 3rd power.
+(Note: in linear dynamical systems, operators like this set up dynamics
+linear in time
+as opposed to the exponential dynamics set up by eigenvectors normally. In the
+above example if coordinate 1 is position, coordinate 2 becomes speed and 3
+acceleration).
+
+## Invariant subspaces and QR decomposition
+
+While the eigenbasis decomposition is the most common and useful
+way to characterize matrices, it is far from the only informative one.
+We will talk briefly about converting matrices to triangular forms, with an
+eye towards talking about singular value decomposition in the next section.
+
+For any finite dimensional linear operator (matrix), we can find some basis
+in which it is upper triangular. In some sense we already know this because of
+the Jordan canonical form mentioned in the previous section; however we can
+go through an alternative calculation which gets us a different decomposition.
+
+What kind of operator does an upper triangular matrix represent? In terms
+of the basis coordinates, the first coordinate maps to a subspace spanned by
+the first coordinate, the first two coordinates map to a subspace spanned by
+the first two, and so on and so forth. In this way, there are a nested
+set of _invariant subspaces_ - linear subspaces that map onto themselves.
+
+How can we construct such a set of nested invariant subspaces? One way
+is to construct one inductively. Suppose that we have an invariant subspace
+of dimension $k$. We can find one of dimension $k+1$ in the following way.
+Let $\textbf{P}_{k}$ be the orthogonal projection onto our $k$ dimensional
+invariant subspace $V_{k}$.
+That is, on $V_{k}$ it is the identity;
+orthogonal vectors map to 0. Then consider
+$$
+\textbf{M}_{k+1}\equiv (\textbf{Id}-\textbf{P}_{k})\textbf{M}
+$$
+This linear map outputs onto the orthogonal subspace $(V_{k})_{\perp}$.
+Therefore, restricted to $(V_{k})_{\perp}$ it is a map from that subspace
+onto itself. It has some eigenvector $v_{k+1}$. While $v_{k+1}$ is an eigenvector
+of $\textbf{M}_{k+1}$, it is not an eigenvector of $\textbf{M}$; however,
+it has no other projection onto $(V_{k})_{\perp}$. Therefore,
+$\textbf{M}$ maps $V_{k}\oplus\{v_{k+1}\}$ onto itself; we now have
+a $k+1$ dimensional subspace!
+
+Our base case is a 1-dimensional invariant subspace; that is, an eigenvector.
+We already know that each linear operator has an eigenvector; therefore we
+are done. We've proven that a nested set of invariant subspaces exists.
+
+In fact, we've done more. What we've done is shown that this series of
+invariant subspaces are orthogonal to each other. We have proven
+the existence of a decomposition
+$$
+\textbf{M} = \textbf{U}\textbf{T}\textbf{U}^{\dagger}
+$$
+where $\textbf{T}$ is upper triangular, and $\textbf{U}$ is a _unitary_ matrix
+(generalized rotation for
+complex vector spaces, $\textbf{U}^{\dagger}\textbf{U} = \textbf{Id}$). Here $\dagger$ is the adjoint
+(transpose + complex conjugate).
+
+Related to this decomposition is the _QR decomposition_ where $\textbf{M}$
+can be written as $\textbf{Q}\textbf{R}$ - where the first matrix is
+orthogonal and the second is upper triangular. While our above decomposition
+scheme dependeded on the eigenvectors chosen, the QR decomposition is
+unique if $\textbf{M}$ is invertible, and we choose the diagonal elements of
+$\textbf{R}$ to be positive and ordered. Note that RQ, LQ, and QL decompositions
+also exist (L being lower triangular).
+
+## Singular value decomposition
+
+In the above decompositions, we've secretly added a hidden structure:
+an inner product. Unitary matrices (and even the adjoint) implicitly assume
+that some inner product exists. After all, a rotation is an operator that leaves
+_lengths_ invariant!
+
+The most commonly used type of unitary transformation of a matrix is
+the _singular value decomposition_ (SVD). We decompose our matrix
+$\textbf{M}$ as
+$$
+\textbf{M} = \textbf{U}\mathbf{\Lambda}\textbf{V}^{\dagger}
+$$
+where $\textbf{U}$ and $\textbf{V}$ are unitary, and $\mathbf{\Lambda}$
+is diagonal. In order to make the decomposition unique up to
+complex phases, one picks the
+$\mathbf{\Lambda}$ to be positive and ordered (which can be accomplished
+by permutation and multiplying phases into the unitary matrices).
+The columns of $\textbf{V}$ are the _right singular vectors_
+and the columns of $\textbf{U}$ are the _left singular vectors_.
+
+There are two ways to think about SVD, and the singular values themselves. One
+is as solutions to the optimization problem
+$$
+\textbf{u}_{c},\textbf{v}_{c} = \underset{\textbf{u},\textbf{v}}{\arg\max}
+~\textbf{u}^{\dagger}\textbf{M}\textbf{v}
+$$
+where $\textbf{u}$ and $\textbf{v}$ are constrained to be fixed length.
+The singular values are the (local) minima of this constrained optimization;
+the pairs of vectors $\textbf{u}$ and $\textbf{v}$ give us the sets of
+left and right singular vectors respectively. These vectors obey the equations
+$$
+\lambda_{u}\textbf{u}_{c} = \textbf{M}\textbf{v}_{c},~\lambda_{v}\textbf{v}_{c} = \textbf{M}^{\dagger}\textbf{u}_{c}
+$$
+If we pick the pair that gives us the maximal value, we can "shave it off"
+from the space: we know that inputting in $\textbf{v}_{c}$ gets us
+an output proportional to $\textbf{u}_{c}$. However, if we have an input
+orthogonal to $\textbf{v}_{c}$, its output will be orthogonal to
+$\textbf{u}_{c}$ by the second equation. Therefore we can take one dimension
+out of the input space and one out of the output space; we can iterate
+and construct the SVD as defined above.
+
+Note that this kind of "optimization" definition nets us eigenvectors
+and eigenvalues
+when $\textbf{M}$ is symmetric, and we compute
+$\textbf{u}^{\text{T}}\textbf{M}\textbf{u}$. This optimization formulation
+correctly generalizes to the case where the matrices are not symmetric.
+
+Another way to get the singular values and vectors is to consider
+the matrices $\textbf{M}\textbf{M}^{\dagger}$ and
+$\textbf{M}^{\dagger}\textbf{M}$. These are both _Hermitian_ matrices
+(generalization of symmetric to complex valued). Hermitian matrices
+all have a complete, orthogonal eigenbasis with real eigenvalues.
+If we cheat and plug in the SVD form of $\textbf{M}$ into each
+of the formulae we get
+$$
+\textbf{M}\textbf{M}^{\dagger} = \textbf{U}\mathbf{\Lambda}\textbf{V}^{\dagger}\textbf{V}\mathbf{\Lambda}^{\dagger}\textbf{U}^{\dagger} = \textbf{U}\mathbf{\Lambda}\mathbf{\Lambda}^{\dagger}\textbf{U}^{\dagger}
+$$
+and similarly
+$$
+\textbf{M}^{\dagger}\textbf{M} = \textbf{V}\mathbf{\Lambda}^{\dagger}\mathbf{\Lambda}\textbf{V}^{\dagger}
+$$
+Therefore, the singular vectors are the eigenvectors of the two product matrices,
+and the singular values are the (positive) square roots of the
+eigenvalues of the two operators. (As a bonus note, these formulae
+tell us that for real $\textbf{M}$, the singular vectors are real as well.)
+
+## Features of SVD and applications
+
+There are a few important notes to make about SVD. The first is that
+SVD is very coordinate dependent. It depends on the (often implicit)
+choice of an inner product on our space, from which notions of orthogonality
+can be defined (and unitary matrices/transposes). The SVD
+is invariant under rotations (which don't change the inner product)
+but not under non-orthogonal transformations (which correlate coordinates).
+
+The second is a related point: the singular values are in general NOT the
+same as the eigenvalues, even in magnitude! As an example, consider the matrix
+$$
+\textbf{M} = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+$$
+It has one degenerate eigenvalue $\lambda = 1$. Now consider
+$\textbf{M}^{\dagger}\textbf{M}$; we have
+$$
+\textbf{M}^{\dagger}\textbf{M} = \begin{pmatrix}
+2 & 1 \\
+1 & 1
+\end{pmatrix}
+$$
+If the eigenvalues were matched to the singular values, this matrix would have
+eigenvalues 1 and 1. However, its trace is 3; therefore its singular
+values and eigenvalues don't match! More on which values matter later.
+
+Also note that SVD can be applied to non-square matrices. In this case,
+$\textbf{V}$ is a square matrix with dimensions of the input, $\textbf{U}$
+is the same for the output, and $\mathbf{\Lambda}$ has the same dimensions
+as $\textbf{M}$ - and is diagonal or 0 (rectangular diagonal matrix).
+The number of singular values is the minimum of the
+dimensions of $\textbf{M}$ - the structure fundamentally can only have
+the dimensionality of the simplest vector space involved!
+
+The singular values and eigenvalues are only the same when the
+matrix is _normal_ - that is, it has an orthogonal eigenbasis. In this case
+$\textbf{U} = \textbf{V}$. In fact, thinking about singular values gives
+us another way to characterize normal dynamics: an operator $\textbf{M}$
+is normal if and only if
+$$
+\textbf{M}\textbf{M}^{\dagger} = \textbf{M}^{\dagger}\textbf{M}
+$$
+In other words, normal operators commute with their transposes! We prove this
+quite simply; the two products above can be used to get the $\textbf{V}$
+and the $\textbf{U}$, and if the singular vectors are the same, the
+matrices from which they are derived should be the same too.
+
+All of these points come up when we use SVD in the "real world".
+The most common useage of singular value decomposition is to analyze and
+reduce the dimensionality of data. Consider a data matrix $\textbf{M}$
+constructed by "gluing together" data (column) vectors $\textbf{v}_{i}$:
+$$
+\textbf{M} = \begin{pmatrix}
+\textbf{v}_{1}  & \textbf{v}_{2}  & \textbf{v}_{2} & ...
+\end{pmatrix}
+$$
+The right singular vectors $\textbf{V}$ give some sense of the correlations
+between different data elements. The left vectors $\textbf{U}$ give a basis
+over the data space. To reduce the dimensionality of data while preserving
+the structure, we can project the data onto only the left singular
+vectors which correspond to the largest singular values.
+
+What structure are we preserving? Recall that the $\textbf{U}$ are
+the eigenvectors of $\textbf{M}\textbf{M}^{\dagger}$. In our data matrix,
+the $ij$th entry of this matrix corresponds to
+$$
+(\textbf{M}\textbf{M}^{\dagger})_{ij} = \sum_{\alpha}(\textbf{v}_{\alpha})_{i}
+(\textbf{v}_{\alpha})_{j}
+$$
+If the mean is subtracted out of our data, this is the covariance between
+coordinates $i$ and $j$! Therefore, the $\textbf{U}$ give us an ordered basis
+which contributes to the covariance. Projecting our data into some subset of the
+$\textbf{U}$ then preserves the covariance structure, while reducing
+dimensionality. This is the idea behind the popular dimensionality reduction
+technique _PCA_. The eigenvectors $\textbf{U}$ are called _principal components_
+(PCs). PCA is the appropriate thing to do when Gaussian distributions
+are involved, but is surprisingly useful in situations where that is not the
+case.
+
+Our understanding of SVD tells us a few things about PCA. First, it is
+rotationally invariant. If we multiply our data by any unitary matrix, the PCA
+will basically be the same; PCs will be in direct 1-1 correspondence.
+However, any non-unitary linear
+transformation will change the structure of the PCs. The principal values will
+be different, and the PCs won't map to each other 1-1. This is just for
+arbitrary _linear_ transforms! Non-linear transforms will be even less related.
+That's why if you're doing PCA on data which isn't Gaussian distributed,
+it may be worth randomly transforming the data, doing PCA, and seeing if the
+conclusions you draw are the same.
+
+## Normal vs. non-normal dynamics
+
+We conclude with an example of the qualitative differences between understanding
+things from the singular value picture versus the eigenvalue decomposition.
+I may expand this in a later post with some examples from neuroscience and
+ecology modelling which inspired me to revisit my understanding of matrix
+decomposition.
+
+Consider a linear dynamical system with the equation
+$$
+\dot{\textbf{x}} = \textbf{M}\textbf{x}
+$$
+Let $\textbf{w}$ be some fixed vector. We want to ask:
+when can perturbations in the $\textbf{w}$ direction not affect the dynamics,
+while the $\textbf{w}$
+component is present at late times in the dynamics of $\textbf{x}$?
+
+In general, we can solve linear dynamical systems by diagonalizing
+$\textbf{M}$, and solving the resulting uncoupled system of equations. (We
+won't deal with the case of degeneracy here.) Let
+$\textbf{M} = \textbf{B}\mathbf{\lambda}\textbf{B}^{-1}$ for diagonal
+$\mathbf{\lambda}$. Let $\textbf{y} = \textbf{B}^{-1}\textbf{x}$.
+Then we have
+$$
+y_{i}(t) = c_{i}e^{\lambda_{i}t}
+$$
+We can use this basis to answer our question.
+
+Consider first the case where $\textbf{M}$ is normal. Then, in the coordinate
+system of the $\textbf{y}$, the inner product is just the standard inner product.
+If $\textbf{w}$ does not affect the dynamics, that means that $\textbf{w}$
+does not project much onto components of $\textbf{y}$ which have
+large $\lambda_{i}$. Let $\textbf{w}' = \textbf{B}^{-1}\textbf{w}$; then we have
+$$
+\textbf{w}^{\dagger}\textbf{x} = \textbf{w}'^{\dagger}\textbf{y}
+$$
+which is given by
+$$
+\textbf{w}^{\dagger}\textbf{x} = \sum_{i}(\textbf{w}')_{i}c_{i}e^{\lambda_{i}t}
+$$
+We know this is small since $\textbf{w}$ does not project much onto the
+$\textbf{y}$ which matter; therefore $\textbf{w}$ does not play into the dynamics
+much.
+
+However, what happens if $\textbf{M}$ is not normal? Then we can arrive at our
+desired behavior, which we can see in one of two ways. First, suppose that
+$\textbf{w}$ has a large projection onto some left singular vector $\textbf{U}$
+but is uncorrelated with the right singular vectors $\textbf{V}$. Then
+
+This explanation works, but is a bit annoying since it's not in terms of the
+eigenbasis - which gives us a complete understanding of the dynamics. Here's
+an alternative explanation.
+
+Suppose again that $\textbf{M}$ is non-normal. Suppose now that
+$\textbf{w}$ is a zero eigenvector of $\textbf{M}$. That is, it doesn't
+contribute at all to the dynamics. Now when we calculate
+$\textbf{w}^{\dagger}\textbf{x}$, we have
+$$
+\textbf{w}^{\dagger}\textbf{x} =
+(\textbf{w}')^{\dagger}(\textbf{B}^{-1})^{\dagger}\textbf{B}^{-1}\textbf{y}
+$$
+Now, even though $\textbf{w}$ is an eigenvector of $\textbf{M}$ (ie, a
+coordinate basis vector in the $\textbf{y}$ coordinates), the inner products
+are no longer compatible between the bases. The inner product is defined by
+the matrix $(\textbf{B}^{-1})^{\dagger}\textbf{B}^{-1}$, and now induces
+correlations between the different eigenmodes! Therefore even though
+$\textbf{w}$ has literally 0 dynamical contribution, projecting onto
+$\textbf{w}$ in the original space still gets us signal.
+
+Here we arrive at an interesting feature of non-normal dynamics: the input-output
+behavior is not symmetric as it is for normal dynamics. In other words,
+coordinates which are nice for understanding dynamics don't play nicely with the
+inner product. This is not important when there is symmetry up to linear
+transformations in the problem; one can then switch bases at will. However,
+when there is a particular basis with meaning (ie, the basis of neuron
+activities or species abundances), or when the noise characteristics are known
+in a particular basis (ie the basis with uncorrelated noise), then
+the distinction between normal and non-normal dynamics truly matters.
+
+## Links to neuroscience and ecology
+
+I won't go into this now, but the question of normality of dynamics may
+be important for modelling efforts in both theoretical neuroscience and
+theoretical ecology. I hope to expand on this in a later post, when I have
+thought a bit more about how these things apply.
