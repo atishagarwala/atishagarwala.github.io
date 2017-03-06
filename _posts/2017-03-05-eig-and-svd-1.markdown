@@ -61,12 +61,15 @@ the characteristic polynomial), then we are not guaranteed to have a complete
 eigenbasis. In the worst case scenario we are guaranteed a nested set of invariant
 subspaces. That is, we have some collection of vectors
 $\{\textbf{v}_{\lambda,i}\}$ such that
+
 $$
 \textbf{M}\left(\text{span}\{\textbf{v}_{\lambda,i}\}_{i\leq j}\right)\subseteq\textbf{M}\left(\text{span}\{\textbf{v}_{\lambda,i}\}_{i\leq k}\right)
 $$
+
 where $j\leq k$. More concretely, this means we can find a basis where
 $\textbf{M}$ is almost diagonal, possible with 1's on the off diagonal.
 This is known as the _Jordan canonical form_, and the blocks look like
+
 $$
 \begin{pmatrix}
 ...\\
@@ -76,9 +79,11 @@ $$
 ...
 \end{pmatrix}
 $$
+
 The non-diagonalizability is related to _nilpotent_ elements - submatrices which
 are non-zero, but become zero when raised to some power. A simple example is
 the 3-d matrix
+
 $$
 \textbf{N}_{3} = \begin{pmatrix}
 0 & 1 & 0\\
@@ -86,8 +91,10 @@ $$
 0 & 0 & 0
 \end{pmatrix}
 $$
+
 This matrix only has one eigenvalue (0) and one eigenvector (the first
 coordinate). It is already in Jordan form. We can compute its powers as
+
 $$
 \textbf{N}_{3} = \begin{pmatrix}
 0 & 1 & 0\\
@@ -103,6 +110,7 @@ $$
 0 & 0 & 0
 \end{pmatrix}
 $$
+
 The matrix is evidently a shift operator. It becomes 0 after the 3rd power.
 (Note: in linear dynamical systems, operators like this set up dynamics
 linear in time
@@ -135,9 +143,11 @@ Let $\textbf{P}_{k}$ be the orthogonal projection onto our $k$ dimensional
 invariant subspace $V_{k}$.
 That is, on $V_{k}$ it is the identity;
 orthogonal vectors map to 0. Then consider
+
 $$
 \textbf{M}_{k+1}\equiv (\textbf{Id}-\textbf{P}_{k})\textbf{M}
 $$
+
 This linear map outputs onto the orthogonal subspace $(V_{k})_{\perp}$.
 Therefore, restricted to $(V_{k})_{\perp}$ it is a map from that subspace
 onto itself. It has some eigenvector $v_{k+1}$. While $v_{k+1}$ is an eigenvector
@@ -153,12 +163,15 @@ are done. We've proven that a nested set of invariant subspaces exists.
 In fact, we've done more. What we've done is shown that this series of
 invariant subspaces are orthogonal to each other. We have proven
 the existence of a decomposition
+
 $$
 \textbf{M} = \textbf{U}\textbf{T}\textbf{U}^{\dagger}
 $$
+
 where $\textbf{T}$ is upper triangular, and $\textbf{U}$ is a _unitary_ matrix
 (generalized rotation for
-complex vector spaces, $\textbf{U}^{\dagger}\textbf{U} = \textbf{Id}$). Here $\dagger$ is the adjoint
+complex vector spaces, $\textbf{U}^{\dagger}\textbf{U} = \textbf{Id}$). Here
+$\dagger$ is the adjoint
 (transpose + complex conjugate).
 
 Related to this decomposition is the _QR decomposition_ where $\textbf{M}$
@@ -179,9 +192,11 @@ _lengths_ invariant!
 The most commonly used type of unitary transformation of a matrix is
 the _singular value decomposition_ (SVD). We decompose our matrix
 $\textbf{M}$ as
+
 $$
 \textbf{M} = \textbf{U}\mathbf{\Lambda}\textbf{V}^{\dagger}
 $$
+
 where $\textbf{U}$ and $\textbf{V}$ are unitary, and $\mathbf{\Lambda}$
 is diagonal. In order to make the decomposition unique up to
 complex phases, one picks the
@@ -192,17 +207,21 @@ and the columns of $\textbf{U}$ are the _left singular vectors_.
 
 There are two ways to think about SVD, and the singular values themselves. One
 is as solutions to the optimization problem
+
 $$
 \textbf{u}_{c},\textbf{v}_{c} = \underset{\textbf{u},\textbf{v}}{\arg\max}
 ~\textbf{u}^{\dagger}\textbf{M}\textbf{v}
 $$
+
 where $\textbf{u}$ and $\textbf{v}$ are constrained to be fixed length.
 The singular values are the (local) minima of this constrained optimization;
 the pairs of vectors $\textbf{u}$ and $\textbf{v}$ give us the sets of
 left and right singular vectors respectively. These vectors obey the equations
+
 $$
 \lambda_{u}\textbf{u}_{c} = \textbf{M}\textbf{v}_{c},~\lambda_{v}\textbf{v}_{c} = \textbf{M}^{\dagger}\textbf{u}_{c}
 $$
+
 If we pick the pair that gives us the maximal value, we can "shave it off"
 from the space: we know that inputting in $\textbf{v}_{c}$ gets us
 an output proportional to $\textbf{u}_{c}$. However, if we have an input
@@ -224,13 +243,17 @@ $\textbf{M}^{\dagger}\textbf{M}$. These are both _Hermitian_ matrices
 all have a complete, orthogonal eigenbasis with real eigenvalues.
 If we cheat and plug in the SVD form of $\textbf{M}$ into each
 of the formulae we get
+
 $$
 \textbf{M}\textbf{M}^{\dagger} = \textbf{U}\mathbf{\Lambda}\textbf{V}^{\dagger}\textbf{V}\mathbf{\Lambda}^{\dagger}\textbf{U}^{\dagger} = \textbf{U}\mathbf{\Lambda}\mathbf{\Lambda}^{\dagger}\textbf{U}^{\dagger}
 $$
+
 and similarly
+
 $$
 \textbf{M}^{\dagger}\textbf{M} = \textbf{V}\mathbf{\Lambda}^{\dagger}\mathbf{\Lambda}\textbf{V}^{\dagger}
 $$
+
 Therefore, the singular vectors are the eigenvectors of the two product matrices,
 and the singular values are the (positive) square roots of the
 eigenvalues of the two operators. (As a bonus note, these formulae
@@ -247,20 +270,24 @@ but not under non-orthogonal transformations (which correlate coordinates).
 
 The second is a related point: the singular values are in general NOT the
 same as the eigenvalues, even in magnitude! As an example, consider the matrix
+
 $$
 \textbf{M} = \begin{pmatrix}
 1 & 1 \\
 0 & 1
 \end{pmatrix}
 $$
+
 It has one degenerate eigenvalue $\lambda = 1$. Now consider
 $\textbf{M}^{\dagger}\textbf{M}$; we have
+
 $$
 \textbf{M}^{\dagger}\textbf{M} = \begin{pmatrix}
 2 & 1 \\
 1 & 1
 \end{pmatrix}
 $$
+
 If the eigenvalues were matched to the singular values, this matrix would have
 eigenvalues 1 and 1. However, its trace is 3; therefore its singular
 values and eigenvalues don't match! More on which values matter later.
@@ -278,9 +305,11 @@ matrix is _normal_ - that is, it has an orthogonal eigenbasis. In this case
 $\textbf{U} = \textbf{V}$. In fact, thinking about singular values gives
 us another way to characterize normal dynamics: an operator $\textbf{M}$
 is normal if and only if
+
 $$
 \textbf{M}\textbf{M}^{\dagger} = \textbf{M}^{\dagger}\textbf{M}
 $$
+
 In other words, normal operators commute with their transposes! We prove this
 quite simply; the two products above can be used to get the $\textbf{V}$
 and the $\textbf{U}$, and if the singular vectors are the same, the
@@ -290,11 +319,13 @@ All of these points come up when we use SVD in the "real world".
 The most common useage of singular value decomposition is to analyze and
 reduce the dimensionality of data. Consider a data matrix $\textbf{M}$
 constructed by "gluing together" data (column) vectors $\textbf{v}_{i}$:
+
 $$
 \textbf{M} = \begin{pmatrix}
 \textbf{v}_{1}  & \textbf{v}_{2}  & \textbf{v}_{2} & ...
 \end{pmatrix}
 $$
+
 The right singular vectors $\textbf{V}$ give some sense of the correlations
 between different data elements. The left vectors $\textbf{U}$ give a basis
 over the data space. To reduce the dimensionality of data while preserving
@@ -304,10 +335,12 @@ vectors which correspond to the largest singular values.
 What structure are we preserving? Recall that the $\textbf{U}$ are
 the eigenvectors of $\textbf{M}\textbf{M}^{\dagger}$. In our data matrix,
 the $ij$th entry of this matrix corresponds to
+
 $$
 (\textbf{M}\textbf{M}^{\dagger})_{ij} = \sum_{\alpha}(\textbf{v}_{\alpha})_{i}
 (\textbf{v}_{\alpha})_{j}
 $$
+
 If the mean is subtracted out of our data, this is the covariance between
 coordinates $i$ and $j$! Therefore, the $\textbf{U}$ give us an ordered basis
 which contributes to the covariance. Projecting our data into some subset of the
@@ -338,9 +371,11 @@ ecology modelling which inspired me to revisit my understanding of matrix
 decomposition.
 
 Consider a linear dynamical system with the equation
+
 $$
 \dot{\textbf{x}} = \textbf{M}\textbf{x}
 $$
+
 Let $\textbf{w}$ be some fixed vector. We want to ask:
 when can perturbations in the $\textbf{w}$ direction not affect the dynamics,
 while the $\textbf{w}$
@@ -352,9 +387,11 @@ won't deal with the case of degeneracy here.) Let
 $\textbf{M} = \textbf{B}\mathbf{\lambda}\textbf{B}^{-1}$ for diagonal
 $\mathbf{\lambda}$. Let $\textbf{y} = \textbf{B}^{-1}\textbf{x}$.
 Then we have
+
 $$
 y_{i}(t) = c_{i}e^{\lambda_{i}t}
 $$
+
 We can use this basis to answer our question.
 
 Consider first the case where $\textbf{M}$ is normal. Then, in the coordinate
@@ -362,13 +399,17 @@ system of the $\textbf{y}$, the inner product is just the standard inner product
 If $\textbf{w}$ does not affect the dynamics, that means that $\textbf{w}$
 does not project much onto components of $\textbf{y}$ which have
 large $\lambda_{i}$. Let $\textbf{w}' = \textbf{B}^{-1}\textbf{w}$; then we have
+
 $$
 \textbf{w}^{\dagger}\textbf{x} = \textbf{w}'^{\dagger}\textbf{y}
 $$
+
 which is given by
+
 $$
 \textbf{w}^{\dagger}\textbf{x} = \sum_{i}(\textbf{w}')_{i}c_{i}e^{\lambda_{i}t}
 $$
+
 We know this is small since $\textbf{w}$ does not project much onto the
 $\textbf{y}$ which matter; therefore $\textbf{w}$ does not play into the dynamics
 much.
@@ -386,10 +427,12 @@ Suppose again that $\textbf{M}$ is non-normal. Suppose now that
 $\textbf{w}$ is a zero eigenvector of $\textbf{M}$. That is, it doesn't
 contribute at all to the dynamics. Now when we calculate
 $\textbf{w}^{\dagger}\textbf{x}$, we have
+
 $$
 \textbf{w}^{\dagger}\textbf{x} =
 (\textbf{w}')^{\dagger}(\textbf{B}^{-1})^{\dagger}\textbf{B}^{-1}\textbf{y}
 $$
+
 Now, even though $\textbf{w}$ is an eigenvector of $\textbf{M}$ (ie, a
 coordinate basis vector in the $\textbf{y}$ coordinates), the inner products
 are no longer compatible between the bases. The inner product is defined by
