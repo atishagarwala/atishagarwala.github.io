@@ -2,7 +2,8 @@
 layout: post
 title:  "Some thoughts on eigenvalues and SVD"
 date:   2017-03-05
-categories: linearalgebra spectra
+categories: math
+tags: [linearalgebra,spectra]
 comments: true
 ---
 
