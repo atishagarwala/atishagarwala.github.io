@@ -51,26 +51,26 @@ in the dorms.
 
 Main entrance.
 
-
+<br>
 
 ![Interior board](/images/interior_board.jpg)
 
-
+<br>
 
 Lots of chalkboards around, kind of a dream setup for a theorist.
 
-
+<br>
 
 ![Piano and boards](/images/piano_and_boards.jpg)
 
-
+<br>
 
 Also (at least) two very nice pianos.
 
-
+<br>
 
 ![Dining room](/images/dining_room.jpg)
 
-
+<br>
 
 Super fancy dining room.
