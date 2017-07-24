@@ -47,7 +47,7 @@ in the dorms.
 
 ![Entrance](/images/entrance.jpg)
 
-
+<br>
 
 Main entrance.
 
