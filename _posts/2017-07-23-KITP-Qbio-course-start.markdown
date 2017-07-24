@@ -43,7 +43,7 @@ Since not much has happened yet, I'll include some pictures of the Munger Reside
 KITP visitors in a kind of collaborative work/play/living space. Would be sweet to get to stay here, but for now we're just
 in the dorms.
 
-
+<br>
 
 ![Entrance](/images/entrance.jpg)
 
