@@ -57,7 +57,7 @@ later in the week, so hope to learn some more about the actual biology of the pr
 ## The project
 
 Looks like we'll work on 2 projects, one for the first two weeks, and another for the second two weeks. The first two
-weeks I'll be working on the ecology of cellulose eating bacteria with (Steven Quistad)[http://www.stevenquistad.com/].
+weeks I'll be working on the ecology of cellulose eating bacteria with [Steven Quistad](http://www.stevenquistad.com/).
 In short, they passaged 10 different communities sampled form compost in minimal media with cellulose (ie a piece of
 paper) as a carbon source. They transferred the microbes once every two weeks for a year. Each community was
 passaged in one of two ways: first, there was the *Vertical* group, which was passaged normally. Second, there
