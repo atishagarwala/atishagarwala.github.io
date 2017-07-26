@@ -68,4 +68,6 @@ I think this is a pretty cool experiment, because it has the possibility of both
 (with the vertical alone), and says something about migration/horizontal gene transfer (with the horizontal treatment).
 It would be cool if both inter and intra line information could be combined to do things like assess community
 evolution and stability, new genes sweeping through the population, and the rate of recombination events. Stay tuned
-for what direction me (and the other students) will take this in!
+for what direction me (and the other students) will take this in! Really excited to work on this, was my first choice
+of all the projects. I'll be working on a project with millifluidics in weeks 3 and 4, and will talk more about that
+when I get there.
