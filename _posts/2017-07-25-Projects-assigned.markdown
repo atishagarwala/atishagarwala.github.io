@@ -49,6 +49,11 @@ resistance to flare up again faster than it would if resistance to A established
 to get some of the numbers to play around with to try and get at the plausibility of different scenarios. 
 I guess a related question would be, how often does resistance arise from standing variation rather than de novo mutation?
 
+Also had a good chat with Otto Cordero about various topics. He mentioned that phage may attack mobile genetic elements
+in bacteria more than other ones - which may mean that I should think about recombination in my bacteria-phage
+coevolution stuff. I think a postdoc from his lab is going to talk about this at some point, and he's giving a talk
+later in the week, so hope to learn some more about the actual biology of the problem I'm thinking about!
+
 ## The project
 
 Looks like we'll work on 2 projects, one for the first two weeks, and another for the second two weeks. The first two
