@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Paper project brainstorming"
-date:   2017-07-26
+title:  "Thoughts on theoretical ecology"
+date:   2017-07-27
 categories: bio,evolution,ecology
 tags: [kitpQBio2017,eco-evo]
 comments: true
