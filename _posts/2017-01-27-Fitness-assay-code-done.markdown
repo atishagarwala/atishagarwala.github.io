@@ -2,7 +2,7 @@
 layout: post
 title:  "Bulk fitness assay code up!"
 date:   2017-01-27
-categories: fitnessassay experimentalevo
+tags: [fitnessassay,experimentalevo]
 comments: true
 ---
 
