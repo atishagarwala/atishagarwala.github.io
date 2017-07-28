@@ -2,7 +2,6 @@
 layout: post
 title:  "KITP Qbio Day 1: Community selection and project proposals"
 date:   2017-07-24
-categories: bio,evolution,ecology
 tags: [kitpQBio2017,eco-evo]
 comments: true
 ---
