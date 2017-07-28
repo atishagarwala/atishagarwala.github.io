@@ -2,7 +2,6 @@
 layout: post
 title:  "Project assignments and random thoughts"
 date:   2017-07-25
-categories: bio,evolution,ecology
 tags: [kitpQBio2017,eco-evo]
 comments: true
 ---
