@@ -13,9 +13,9 @@ comments: true
     {{ content }}
   </div>
   
-  {% if post.next.url %}
+  {% if page.next.url %}
 <span class="page-nav-item">
-    <a rel="prev" href="{{ post.previous.url }}" title="View {{ post.previous.title }}">&larr; View previous article</a>
+    <a rel="prev" href="{{ page.previous.url }}" title="View {{ page.previous.title }}">&larr; View previous article</a>
 </span>
 {% endif %}
   
