@@ -2,7 +2,6 @@
 layout: post
 title:  "Starting KITP Qbio course"
 date:   2017-07-23
-categories: bio,evolution,ecology
 tags: [kitpQBio2017,eco-evo]
 comments: true
 ---
