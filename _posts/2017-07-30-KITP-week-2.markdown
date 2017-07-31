@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "KITP Course week 2"
+date:   2017-07-30
+tags: [kitpQBio2017,eco-evo]
+comments: true
+---
+
+Had a great Sunday, biked to Santa Barbara with Michael and a few others from the course. Got some delicious tacos, and some
+nice ice cream too. Ended with barbeque and ping pong. Not a bad day off.
+
+Second week is about to start. We'll do some DNA extraction and sequencing later in the week, but until then I'll look through
+the data. Thought I'd use this space to try to plan out what I want to do. I tend to feel a bit overwhelmed when first getting
+a new dataset, not knowing what to do first. Feel additionally stressed about this one, because we have a time constraint for
+the course, and I think I'm feeling a little more pressure/competetiveness to do something good. We'll see how that turns out.
+
+## Visualizing the data
+
+Guilhem, Paul Rainey's grad student, had put together some nice visualizations of some of the sequencing data. I think my first
+goal is to recreate/extend that. What I want to do is make a script that does the following, given a particular dataset as
+input:
+* Gives me the overall average coverage and the distribution of coverage
+
+In addition, if I have time I may want to make a data exploration tool which lets me put in a contig number
+
+## Evolutionary scenarios
+
+## Later analyses
+
+Analyses I want to get to later in the week once I have a better sense of the data include:
+
+** Gap analysis. ** I want to 
