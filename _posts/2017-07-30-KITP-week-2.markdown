@@ -9,24 +9,64 @@ comments: true
 Had a great Sunday, biked to Santa Barbara with Michael and a few others from the course. Got some delicious tacos, and some
 nice ice cream too. Ended with barbeque and ping pong. Not a bad day off.
 
-Second week is about to start. We'll do some DNA extraction and sequencing later in the week, but until then I'll look through
-the data. Thought I'd use this space to try to plan out what I want to do. I tend to feel a bit overwhelmed when first getting
+Second week is about to start. We'll do some DNA extraction and sequencing later in the week, but until then I'll look
+through
+the data. Thought I'd use this space to try to plan out what I want to do. I tend to feel a bit overwhelmed when first 
+getting
 a new dataset, not knowing what to do first. Feel additionally stressed about this one, because we have a time constraint for
-the course, and I think I'm feeling a little more pressure/competetiveness to do something good. We'll see how that turns out.
+the course, and I think I'm feeling a little more pressure/competetiveness to do something good. We'll see how that turns 
+out.
+
+Overall the goal for this week is to get a bit more familiar with the data and 
 
 ## Visualizing the data
 
 Guilhem, Paul Rainey's grad student, had put together some nice visualizations of some of the sequencing data. I think my first
 goal is to recreate/extend that. What I want to do is make a script that does the following, given a particular dataset as
 input:
-* Gives me the overall average coverage and the distribution of coverage
+* Gives me the overall average coverage and the distribution of coverage per contig/over the genome.
+* Histograms of mapping accuracy at different positions. One would think that we should get >90% accuracy of a match
+if a metagenome read really came from the same type; the errors should be dominated by the nucleotide errors of the
+original genome. We can use the timepoint where things came from to try to judge this.
+* Coverage cumulative distributions per nucleotide, averaged over a small window. Do this with different cutoffs (probably
+some kind of logarithmic scale) in order to get a sense of what the reads at different frequencies looks like.
 
-In addition, if I have time I may want to make a data exploration tool which lets me put in a contig number
+
+In addition, if I have time I may want to make a data exploration tool which lets me load a file, put in a contig number
+and base pair range, and shows me a variety of these stats in that given window. We'll see how long that would
+take to code/how useful that would be.
 
 ## Evolutionary scenarios
+
+By looking at the data with the above tools, we can try to falsify the various evolutionary scenarios which
+could have occured:
+* **Individual was present at early times, didn't fix until later ones.** Here horizontal gene transfer within
+the bottle may have contributed to structural variation, but that/initial diversity dominated rather than
+transfer between bottles. Can check to see if gaps get filled in other bottles, if gaps get filled in the
+vertical treatment, and how correlated gaps are in different bottles.
+* **Some individual(s) got transferred in from another bottle.** Maybe some whole bacteria were transferred;
+they may be adpative in another condition, so got to high enough frequency to be transferred, and then got transferred
+wholesale to the new bottle. Would look for some conditions where all the gaps are filled, as well as correlation between
+gaps coming up.
+* **Horizontal gene transfer of specific elements.** The golden goose. Would want to show that some gaps get filled in,
+and that gaps don't come at all from vertical conditions. Also need to find the junctions and show that they differ bottle to
+bottle.
 
 ## Later analyses
 
 Analyses I want to get to later in the week once I have a better sense of the data include:
 
-** Gap analysis. ** I want to 
+**Gap analysis.** I want to try and come up with some way of identifying gaps, and classifying them. I need to use the 
+coverage
+to compute a basic null expectation for how large gaps can be at random, as well as use the reads mapping on to their same
+timepoint to create two methods of finding the lengths of gaps which may be real. Can also use time course correlation
+as well. In addition need to write a simple average in window to actually find the ends of the gaps (all tunable).
+
+**Low frequency matches.** Allowing for lower frequency matches may start filling in the gaps; maybe this could be used to
+try and figure out if, at low coverage/earlier timepoints when gaps are somewhat speckled, the filling is real or not.
+
+**Guessing at the evolutionary history of gaps.** Using the above and the time course, can we say something about the origin
+of/evolutionary history of the gaps? This would be the ultimate goal.
+
+**Find reads which span the junctions.** This would be good to see if, for example, when the gap gets filled in in other
+bottles whether or not it actually is incorporated in the same place, or if there are differences.
