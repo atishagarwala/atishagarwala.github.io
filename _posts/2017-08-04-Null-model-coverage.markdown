@@ -18,9 +18,20 @@ continuous region on the genome that has no coverage - that is, a consecutive st
 reads mapping to them. Under this model, what is the empirical distribution $$\hat{\rho}(g)$$, where $$g$$ is the size of a
 gap?
 
-## Simplifying assumptions
+## Computing expectations
 
+As posed, we want to find a distribution of distributions - the probability distribution over empirical distributions.
+In general, this is a complicated problem. However, if we merely compute $${\rm E}[\hat{\rho}(g)]$$, the expected
+value 
 
+The expectation function $$n(g)$$ will be a good approximation of the empirical distribution when the genome is long
+compared to the read lengths and the 
+typical (or perhaps somewhat) block lengths. In this case, we can think of dividing the genome into sublocks
+which are each statistically independent in terms of gap distributions. This is true up to the block-spanning
+gaps, which may contribute to the tail of the distribution. One can compare the tails of the blocked and full
+expectation distributions to try to understand when there are many such roughly independent blocks, and therefore
+when the empirical distribution is close to the expectation. Furthermore, the fact that the distribution does
+not have heavy tails suggests that the expectation function will well characterize the 
 
 ## Relaxing model assumptions
 
