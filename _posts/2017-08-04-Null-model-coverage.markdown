@@ -21,8 +21,14 @@ gap?
 ## Computing expectations
 
 As posed, we want to find a distribution of distributions - the probability distribution over empirical distributions.
-In general, this is a complicated problem. However, if we merely compute $${\rm E}[\hat{\rho}(g)]$$, the expected
-value 
+In general, this is a complicated problem. However, we can show that
+computing $$n(g)\equiv{\rm E}[\hat{\rho}(g)]$$, the expected number of gaps of size $$g$$, is a far more tractable task.
+
+There are $$L-g$$ potential gaps of size exactly $$g$$. Suppose that $$g\ll L$$, so this number is well approximated
+by $$L$$. (We will later see that this is a reasonable assumption for large $$L$$.) If we can compute the probability
+that any of these individual blocks is a gap, we can compute the expectation exactly.
+
+For a region of length $$g$$ to be a gap, and not be contained in any other gap, 
 
 The expectation function $$n(g)$$ will be a good approximation of the empirical distribution when the genome is long
 compared to the read lengths and the 
