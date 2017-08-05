@@ -62,10 +62,13 @@ $$n(g) = L P(\text{no gap reads})P(\text{flanking}|\text{no gap reads}) \approx 
 
 If $$\ell\gg1$$ as well, we have
 
-$$n(g) \approx L(1-e^{-2C/\ell})e^{-Cg/\ell}e^{-C}$$
+$$n(g) \approx L(1-e^{-2C/\ell})e^{-C}e^{-Cg/\ell}$$
 
-We have a roughly exponential distribution, with total gap number given by
-$$ \frac{\ell L}{C}(1-e^{-2C/\ell})e^{-C}$$.
+We have a roughly exponential distribution, with scale $\ell/C$ and total gap number given by
+$$ \frac{\ell L}{C}(1-e^{-2C/\ell})e^{-C}$$. The "typical" largest gap approximately occurs when
+$$n(g) = 1$$, which occurs at $$g = \ell\ln(L)\ln(1-e^{-2C/\ell})$$.
+
+## Model validity and relaxations
 
 The expectation function $$n(g)$$ will be a good approximation of the empirical distribution when the genome is 
 long
@@ -78,7 +81,7 @@ therefore
 when the empirical distribution is close to the expectation. Furthermore, the fact that the distribution does
 not have heavy tails suggests that the expectation function will well characterize the 
 
-## Relaxing model assumptions
+
 
 This model makes some strong assumptions. First, it assumes uniform read length and coverage across the genome. Both of these
 are expected to fail; reads will have some distribution (though this distribution will be quite narrow for Illumina reads),
