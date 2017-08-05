@@ -64,7 +64,7 @@ If $$\ell\gg1$$ as well, we have
 
 $$n(g) \approx L(1-e^{-2C/\ell})e^{-C}e^{-Cg/\ell}$$
 
-We have a roughly exponential distribution, with scale $\ell/C$ and total gap number given by
+We have a roughly exponential distribution, with scale $\ell/C$ and total number of gaps given by
 $$ \frac{\ell L}{C}(1-e^{-2C/\ell})e^{-C}$$. The "typical" largest gap approximately occurs when
 $$n(g) = 1$$, which occurs at $$g_{max} = \frac{\ell}{C}\ln(L(1-e^{-2C/\ell})e^{-C})$$.
 
