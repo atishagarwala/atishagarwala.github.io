@@ -66,10 +66,10 @@ $$n(g) \approx L(1-e^{-2C/\ell})e^{-C}e^{-Cg/\ell}$$
 
 We have a roughly exponential distribution, with scale $\ell/C$ and total gap number given by
 $$ \frac{\ell L}{C}(1-e^{-2C/\ell})e^{-C}$$. The "typical" largest gap approximately occurs when
-$$n(g) = 1$$, which occurs at $$g_{max} = \ell\ln(L(1-e^{-2C/\ell}))$$.
+$$n(g) = 1$$, which occurs at $$g_{max} = \frac{\ell}{C}\ln(L(1-e^{-2C/\ell})e^{-C})$$.
 
 For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$2Le^{-C}$$ and 
-$$g_{max}\approx \ell\ln(2LC/\ell)$$, or $$g_{max}\approx \ell\ln(2R)$$.
+$$g_{max}\approx \ell\ln(2LC/\ell e^{-C})$$, or $$g_{max}\approx \ell(\ln(2R)-C)$$.
 
 ## Model validity and relaxations
 
