@@ -28,14 +28,53 @@ There are $$L-g$$ potential gaps of size exactly $$g$$. Suppose that $$g\ll L$$,
 by $$L$$. (We will later see that this is a reasonable assumption for large $$L$$.) If we can compute the probability
 that any of these individual blocks is a gap, we can compute the expectation exactly.
 
-For a region of length $$g$$ to be a gap, and not be contained in any other gap, 
+For a region of length $$g$$ to be a gap, and not be contained in any other gap, there must be no reads
+in the block, and at least one read flanking each side of the gap. We can compute the probability
+of such an event directly. We label the gap by the integers $$0$$ to $$g-1$$, inclusive.
+We adopt the convention that a read starts at the lowest included 
+number and ends at the highest. Our condition
+then amounts to:
+* No reads which start from $$-(\ell-1)$$ to $$g-1$$ inclusive.
+* At least one read which starts at $$-\ell$$ and at least one which starts at $$g$$.
 
-The expectation function $$n(g)$$ will be a good approximation of the empirical distribution when the genome is long
+We start with the computation of the probability of the first event. There are $$g+\ell-1$$ positions
+which can't have a read start; this gives us
+
+$$P(\text{no~gap~reads}) = \left(1-\frac{g+\ell-1}{L}\right)^{R}$$
+
+If $g-\ell-1\ll L$, we have
+
+$$P(\text{no~gap~reads}) \approx e^{-(g+\ell-1)R/L}$$
+
+We now need to calculate the probability that there is at least one read flanking either side of the
+gap, given that there are no reads in the gap. We can compute this as
+
+$$P(\text{flanking}|\text{no~gap~reads}) = 1-\left(\frac{L-g-\ell-3}{L-g-\ell-1}\right)^{R} $$
+
+We can rewrite and use the large $L$ approximation again:
+
+$$P(\text{flanking}|\text{no~gap~reads}) = 1-\left(1-\frac{2}{L-g-\ell-1}\right)^{R} \approx 1-e^{-\frac{2R}{L}}$$
+
+We can factor out the genome length $$L$$ by defining the per nucleotide coverage $$C\equiv \frac{\ell R}{L}$.
+The expected number of gaps $$n(g)$$ is given by
+
+$$n(g) = L P(\text{no~gap~reads})P(\text{flanking}|\text{no~gap~reads}) \approx L(1-e^{-2C/\ell})e^{-Cg/\ell}e^{-C(1-1/\ell)}$$
+
+If $$\ell\gg1$$ as well, we have
+
+$$n(g) \approx L(1-e^{-2C/\ell})e^{-Cg/\ell}e^{-C}$$
+
+We have a roughly exponential distribution, with total gap number given by
+$$ \frac{\ell L}{C}(1-e^{-2C/\ell})e^{-C}$$.
+
+The expectation function $$n(g)$$ will be a good approximation of the empirical distribution when the genome is 
+long
 compared to the read lengths and the 
 typical (or perhaps somewhat) block lengths. In this case, we can think of dividing the genome into sublocks
 which are each statistically independent in terms of gap distributions. This is true up to the block-spanning
 gaps, which may contribute to the tail of the distribution. One can compare the tails of the blocked and full
-expectation distributions to try to understand when there are many such roughly independent blocks, and therefore
+expectation distributions to try to understand when there are many such roughly independent blocks, and 
+therefore
 when the empirical distribution is close to the expectation. Furthermore, the fact that the distribution does
 not have heavy tails suggests that the expectation function will well characterize the 
 
