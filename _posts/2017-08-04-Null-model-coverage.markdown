@@ -79,7 +79,7 @@ $$\sum_{g = g_{max}}^{\infty}n(g) = 1$$, which occurs at
 $$g_{max} = \frac{\ell}{C}\ln(\ell L/C(1-e^{-C/\ell})^{2}e^{-C}) = \frac{\ell}{C}\ln( L^{2}R^{-1}(1-e^{-C/\ell})^{2}e^{-C})$$
 
 For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$\frac{CL}{\ell} = R$$ and 
-$$g_{max}\approx \frac{\ell}{C}\ln(LC^{2}/\ell^{2})$$, or $$g_{max}\approx \frac{\ell}{C}\ln(R^{2}/L)$$.
+$$g_{max}\approx \frac{\ell}{C}\ln(L^{2}C^{2}/R\ell^{2})$$, or $$g_{max}\approx \frac{\ell}{C}\ln(R)$$.
 
 ## Model validity and relaxations
 
