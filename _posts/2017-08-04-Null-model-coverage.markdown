@@ -47,13 +47,20 @@ If $g-\ell-1\ll L$, we have
 $$P(\text{no gap reads}) \approx e^{-(g+\ell-1)R/L}$$
 
 We now need to calculate the probability that there is at least one read flanking either side of the
-gap, given that there are no reads in the gap. We can compute this as
+gap, given that there are no reads in the gap. We have
 
-$$P(\text{flanking}|\text{no gap reads}) = 1-\left(\frac{L-g-\ell-3}{L-g-\ell-1}\right)^{R} $$
+$$P(\text{flanking}|\text{no gap reads}) = 1-P(\text{no flanking}|\text{no gap reads})$$
+
+which we can write in terms of the individual flanking probabilities as
+$$P(\text{flanking}|\text{no gap reads}) = 1-P(\text{no flanking 1}|\text{no gap reads})-P(\text{no flanking 2}|\text{no gap reads})+P(\text{no flanking 1 and 2}|\text{no gap reads})$$
+
+These probabilities can be computed as:
+
+$$P(\text{flanking}|\text{no gap reads}) = 1-2\left(\frac{L-g-\ell-2}{L-g-\ell-1}\right)^{R} +\left(\frac{L-g-\ell-3}{L-g-\ell-1}\right)^{R} $$
 
 We can rewrite and use the large $L$ approximation again:
 
-$$P(\text{flanking}|\text{no gap reads}) = 1-\left(1-\frac{2}{L-g-\ell-1}\right)^{R} \approx 1-e^{-\frac{2R}{L}}$$
+$$P(\text{flanking}|\text{no gap reads}) = 1-2\left(1-\frac{1}{L}\right)^{R} +\left(1-\frac{2}{L}\right)^{R} \approx (1-e^{-\frac{R}{L}})^{2}$$
 
 We can factor out the genome length $$L$$ by defining the per nucleotide coverage $$C\equiv \frac{\ell R}{L}$$.
 The expected number of gaps $$n(g)$$ is given by
