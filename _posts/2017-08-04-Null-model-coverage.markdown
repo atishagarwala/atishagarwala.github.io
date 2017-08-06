@@ -52,6 +52,7 @@ gap, given that there are no reads in the gap. We have
 $$P(\text{flanking}|\text{no gap reads}) = 1-P(\text{no flanking}|\text{no gap reads})$$
 
 which we can write in terms of the individual flanking probabilities as
+
 $$P(\text{flanking}|\text{no gap reads}) = 1-P(\text{no flanking 1}|\text{no gap reads})-P(\text{no flanking 2}|\text{no gap reads})+P(\text{no flanking 1 and 2}|\text{no gap reads})$$
 
 These probabilities can be computed as:
