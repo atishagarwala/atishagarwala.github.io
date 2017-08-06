@@ -65,18 +65,18 @@ $$P(\text{flanking}|\text{no gap reads}) = 1-2\left(1-\frac{1}{L}\right)^{R} +\l
 We can factor out the genome length $$L$$ by defining the per nucleotide coverage $$C\equiv \frac{\ell R}{L}$$.
 The expected number of gaps $$n(g)$$ is given by
 
-$$n(g) = L P(\text{no gap reads})P(\text{flanking}|\text{no gap reads}) \approx L(1-e^{-2C/\ell})e^{-Cg/\ell}e^{-C(1-1/\ell)}$$
+$$n(g) = L P(\text{no gap reads})P(\text{flanking}|\text{no gap reads}) \approx L(1-e^{-C/\ell})^{2}e^{-Cg/\ell}e^{-C(1-1/\ell)}$$
 
 If $$\ell\gg1$$ as well, we have
 
-$$n(g) \approx L(1-e^{-2C/\ell})e^{-C}e^{-Cg/\ell}$$
+$$n(g) \approx L(1-e^{-C/\ell})^{2}e^{-C}e^{-Cg/\ell}$$
 
 We have a roughly exponential distribution, with scale $\ell/C$ and total number of gaps given by
-$$ \frac{\ell L}{C}(1-e^{-2C/\ell})e^{-C}$$. The "typical" largest gap approximately occurs when
-$$n(g) = 1$$, which occurs at $$g_{max} = \frac{\ell}{C}\ln(L(1-e^{-2C/\ell})e^{-C})$$.
+$$ \frac{\ell L}{C}(1-e^{-C/\ell})^{2}e^{-C}$$. The "typical" largest gap approximately occurs when
+$$n(g) = 1$$, which occurs at $$g_{max} = \frac{\ell}{C}\ln(L(1-e^{-C/\ell})^{2}e^{-C})$$.
 
-For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$2Le^{-C}$$ and 
-$$g_{max}\approx \ell\ln(2LC/\ell e^{-C})$$, or $$g_{max}\approx \ell(\ln(2R)-C)$$.
+For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$\frac{CL}{\ell}e^{-C}$$ and 
+$$g_{max}\approx \frac{\ell}{C}\ln(LC^{2}/\ell^{2})$$, or $$g_{max}\approx \frac{\ell}{C}\ln(R^{2}/L)$$.
 
 ## Model validity and relaxations
 
