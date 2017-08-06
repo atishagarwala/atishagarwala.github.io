@@ -78,11 +78,10 @@ $$\sum_{g = g_{max}}^{\infty}n(g) = 1$$, which occurs at
 
 $$g_{max} = \frac{\ell}{C}\ln(\ell L/C(1-e^{-C/\ell})^{2}e^{-C}) = \frac{\ell}{C}\ln( L^{2}R^{-1}(1-e^{-C/\ell})^{2}e^{-C})$$
 
-For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$\frac{CL}{\ell} = R$$ and 
-$$g_{max}\approx \frac{\ell}{C}\ln(L^{2}C^{2}/R\ell^{2})$$, or $$g_{max}\approx \frac{\ell}{C}\ln(R)$$.
-This makes sense; the $$R$$ total gaps corresponds to the space between adjacent
-reads, which are all non-intersecting in the
-low coverage limit.
+For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$\frac{CL}{\ell}e^{-C} = Re^{-C}$$ and 
+$$g_{max}\approx \frac{\ell}{C}\ln(L^{2}C^{2}/R\ell^{2}e^{-C})$$, or $$g_{max}\approx \frac{\ell}{C}\ln(Re^{-C})$$.
+This makes sense; as $$C$$ goes to zero there are $$R$$ total gaps, which corresponds to the space between adjacent
+reads, which are all non-intersecting.
 
 ## Model validity and relaxations
 
