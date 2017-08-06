@@ -80,6 +80,9 @@ $$g_{max} = \frac{\ell}{C}\ln(\ell L/C(1-e^{-C/\ell})^{2}e^{-C}) = \frac{\ell}{C
 
 For low coverage ($$C\ll\ell$$), the total number of gaps is roughly $$\frac{CL}{\ell} = R$$ and 
 $$g_{max}\approx \frac{\ell}{C}\ln(L^{2}C^{2}/R\ell^{2})$$, or $$g_{max}\approx \frac{\ell}{C}\ln(R)$$.
+This makes sense; the $$R$$ total gaps corresponds to the space between adjacent
+reads, which are all non-intersecting in the
+low coverage limit.
 
 ## Model validity and relaxations
 
