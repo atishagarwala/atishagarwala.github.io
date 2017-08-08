@@ -50,15 +50,15 @@ We now need to calculate the probability that there is at least one read flankin
 gap, given that there are no reads in the gap. Let $F_{1}$ and $F_{2}$ be the events that there
 are reads flanking the left and right sides of the gap respectively. We have
 
-$$P(F_{1}\text{ AND }F_{2}|\text{no gap reads}) = 1-P(\text{NOT }(F_{1}\text{ AND }F_{2})|\text{no gap reads})$$
+$$P(\text{flank}|\text{no gap reads}) = 1-P(\text{no flank}|\text{no gap reads})$$
 
 which we can write in terms of the individual flanking probabilities as
 
-$$P(F_{1}\text{ AND }F_{2}|\text{no gap reads}) = 1-P(\text{NOT }F_{1}|\text{no gap reads})-P(\text{NOT }F_{2}|\text{no gap reads})+P(\text{NOT }F_{1}\text{ AND }F_{2}|\text{no gap reads})$$
+$$P(\text{flank}|\text{no gap reads}) = 1-P(\text{no flank 1}|\text{no gap reads})-P(\text{no flank 2}|\text{no gap reads})+P(\text{no flank}|\text{no gap reads})$$
 
 These probabilities can be computed as:
 
-$$P(F_{1}\text{ AND }F_{2}|\text{no gap reads}) = 1-2\left(\frac{L-g-\ell-2}{L-g-\ell-1}\right)^{R} +\left(\frac{L-g-\ell-3}{L-g-\ell-1}\right)^{R} $$
+$$P(\text{flank}|\text{no gap reads}) = 1-2\left(\frac{L-g-\ell-2}{L-g-\ell-1}\right)^{R} +\left(\frac{L-g-\ell-3}{L-g-\ell-1}\right)^{R} $$
 
 We can rewrite and use the large $L$ approximation again:
 
