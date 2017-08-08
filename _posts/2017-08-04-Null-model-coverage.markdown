@@ -109,10 +109,34 @@ not have heavy tails suggests that the expectation function will well characteri
 
 
 
-This model makes some strong assumptions. First, it assumes uniform read length and coverage across the genome. Both of these
+This model makes some strong assumptions. First, it assumes uniform read length and coverage across the genome. Both of 
+these
 are expected to fail; reads will have some distribution (though this distribution will be quite narrow for Illumina reads),
 and more importantly there will be areas of the genome which naturally have higher or lower coverage. One easy
 way to extend the model would be to try to see the effects of different distributions of coverage and read sizes. A simple
 approach would be to take these distributions from a dataset of interest to see if the data can inform the model.
 
+## Using the model to fit data
+
+Naively fitting the model to data leads to issues; in particular, there are global coverage biases due to GC content etc.,
+and often one can find parts of the genome with extremely high coverage (eg in locations which are more conserved across
+different types). Coverage issues are further complicated by the possible presence of multiple closely related types in the 
+population. Therefore, figuring out the appropriate model parameters can be non-trivial, especially in the sparse coverage
+regime. For example, the coverage $$C$$ can be biased by high coverage areas and lead to too many gaps being called.
+It is useful then to think about the parameters and figure out which ones may be more or less sensitive to
+these issues.
+
+There are three free parameters in the model:
+* $$L$$, the genome length.
+* $$\ell$$, the typical read length
+* $$R$$, the number of reads
+Note that the coverage, which shows up in many of the expressions as a useful quantity, is a composite involving all three.
+
+In most cases, $$L$$ is known and fixed. The question then comes to $$\ell$$ and $$R$$. Given some estimate of the coverage
+$$C$$ (an easily computable average), how should we estimate $$\ell$$ and $$R$$?
+
+With Illumina short reads, the distribution of $$\ell$$ (or really, the mapped $$\ell$$) tends to be relatively narrow.
+Therefore if we have some estimate of $$C$$ via either filtering, or some other method, we should treat it as changing
+the estimate of $$R$$ as opposed to $$\ell$$. Otherwise we can also run into issues where lowering coverage can raise the
+total number of gaps, even in the low coverage situation.
 
