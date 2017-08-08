@@ -83,6 +83,16 @@ $$g_{max}\approx \frac{\ell}{C}\ln(L^{2}C^{2}/R\ell^{2}e^{-C})$$, or $$g_{max}\a
 This makes sense; as $$C$$ goes to zero there are $$R$$ total gaps, which corresponds to the space between adjacent
 reads, which are all non-intersecting.
 
+The cumulative distribution functions are often useful, as they transform nicely
+under rescalings. Additionally, if we are using the null distribution to filter out spurious gaps, we can
+use the CDF to define a cutoff. Let $$N(g)$$ be the number of gaps with length greater than $$g$$. We have
+
+$$ N(g) = \frac{\ell L}{C}(1-e^{-C/\ell})^{2}e^{-C} e^{-Cg/\ell}$$
+
+or, in the low coverage case,
+
+$$ N(g) = Re^{-C} e^{-Cg/\ell}$$
+
 ## Model validity and relaxations
 
 The expectation function $$n(g)$$ will be a good approximation of the empirical distribution when the genome is 
