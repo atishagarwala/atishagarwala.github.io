@@ -55,7 +55,7 @@ about perturbations of that model which have long decay timescales. There
 was also some talk that ecological systems could self organize to that
 sort of state but I don't really understand those things to be honest.
 
-I think the main takeway I came with from talks on the actual biology
+I think the main takeaway I came with from talks on the actual biology
 with regards to directions for theory was the importance of metabolism.
 There were quite a few talks about metabolism, and many people working
 in the field seem to think that this will be the only reasonable way to
