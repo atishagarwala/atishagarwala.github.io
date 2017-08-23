@@ -56,7 +56,7 @@ was also some talk that ecological systems could self organize to that
 sort of state but I don't really understand those things to be honest.
 
 I think the main takeway I came with from talks on the actual biology
-with regards to directions for theory was the importnace of metabolism.
+with regards to directions for theory was the importance of metabolism.
 There were quite a few talks about metabolism, and many people working
 in the field seem to think that this will be the only reasonable way to
 understand the complexity in nature. Alfred Spormann gave a couple of lectures
@@ -66,7 +66,8 @@ talks.
 It seems that for the systems presented (eg Rachel Dutton's cheese model
 community), the first steps to understanding will be based on the large abundance
 taxa which are doing things like adjusting pH, breaking down complex
-carbohydrates, and producing antibiotics. The "physicists view" of analyzing
+carbohydrates, and producing antibiotics. The "statistical
+physicist's view" of analyzing
 a large number of types may not be a useful idea here, where the particulars
 of the environment tell us a lot about what may or may not happen. This
 does need to be taken with a bit of a grain of salt though; right now people
@@ -103,17 +104,17 @@ just reproduce and burst the bacteria right away) and lysogenic phage
 (which incorporate themselves into DNA, and bide their time before inducing
 replication). He also talked about some experiments in chemostats where
 bacteria evolve phage resistance pretty quickly. Paul Turner talked about
-the use of phage in therepeutics, where they might be easier to "design"
+the use of phage in therapeutics, where they might be easier to "design"
 against bacteria (ie by isolation and experimental evolution), and can be
 used to both directly reduce bacterial number and more importantly
 induce tradeoffs that make them less harmful/easier to hit with antibiotics.
 
 Joshua Weitz talked a bit about analyzing data from ocean phage[^phageabundance]
 and
-modelling bacterial-phage coevolution. Some
+modeling bacterial-phage coevolution. Some
 papers of his are in the reading list below. There is some claim that stability
 in these models is helped by having some sort of block structure to the
-interactions; I need to go through and look at the modelling in more detail
+interactions; I need to go through and look at the modeling in more detail
 to figure out what is going on there.
 
 Overall the basic facts about bacteria-phage systems, things like
@@ -124,7 +125,7 @@ phage and bacteria has not really been done, nor have questions about
 co-evolution been satisfactorily been answered.
 
 While it isn't about bacteria-phage coevolution, Aleksandra Walczak has some
-work on immune system coevolution[^immunocoevo]. Might be worth looking at
+work on immune system coevolution[^immunoecoevo]. Might be worth looking at
 for inspiration.
 
 ## Random tidbits
@@ -138,7 +139,7 @@ pop gen.
 * Terry Hwa talked about some work to understand motility in E. Coli, and had
 some cool data/modeling showing some traveling waves of bacteria spreading
 on plates through a combination of growth and gradient generated motility.
-He also had a great lunchtime talk about his stuff on proteom allocation, which
+He also had a great lunchtime talk about his stuff on proteome allocation, which
 had some good philosophical thoughts about research in quantitative biology.
 * Paul Rainey had kind of a cool talk on REPINs, these really small genetic
 elements which may be selfish elements which nonetheless may act as a sort of
@@ -186,7 +187,7 @@ Things like frequency of different types of errors, probabilities of spurious
 matches given fragment lengths, etc. Should maybe talk to Mike or Lily about
 this sort of thing at some point. Specific questions:
 * What sort of codon bias/GC content bias is observed across different types?
-When is a differnece in GC content actually significant of something?
+When is a difference in GC content actually significant of something?
 * What kinds of error rates are typical in various sequencing technologies? What
 kind of forms do those errors take?
 * How easy/hard is it to get DNA from one organism to map onto that of another?
@@ -275,7 +276,7 @@ of analyses scale with parameters/change with algorithms.
 
 ### Cell biophysics
 
-Terry Hwa proteom allocation work:
+Terry Hwa proteome allocation work:
 
 [Ribosome regulation](http://msb.embopress.org/content/10/8/747.long)
 
@@ -303,4 +304,4 @@ Terry Hwa proteom allocation work:
 
 [^phageabundance]: [Viral abundance data](https://www.nature.com/articles/nmicrobiol201524)
 
-[^immunecoevo]: [Evolutionary dynamics of immune system](https://arxiv.org/abs/1703.00226)
+[^immunoecoevo]: [Evolutionary dynamics of immune system](https://arxiv.org/abs/1703.00226)
