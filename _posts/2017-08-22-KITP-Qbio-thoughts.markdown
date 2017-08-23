@@ -277,9 +277,9 @@ of analyses scale with parameters/change with algorithms.
 
 Terry Hwa proteom allocation work:
 
-http://msb.embopress.org/content/10/8/747.long
+[Ribosome regulation](http://msb.embopress.org/content/10/8/747.long)
 
-https://thefauve.hwa.ucsd.edu/~thwa/pub/GrowthLaws-CurrOp.pdf
+[Growth laws](https://thefauve.hwa.ucsd.edu/~thwa/pub/GrowthLaws-CurrOp.pdf)
 
 ### Fun
 
