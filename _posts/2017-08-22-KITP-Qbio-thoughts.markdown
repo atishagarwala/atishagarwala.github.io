@@ -230,7 +230,7 @@ of analyses scale with parameters/change with algorithms.
 
 [^immunecoevo]: [Evolutionary dynamics of immune system](https://arxiv.org/abs/1703.00226)
 
-## Reading list (some repeats)
+## Reading list
 
 ### Bacteria-phage
 
