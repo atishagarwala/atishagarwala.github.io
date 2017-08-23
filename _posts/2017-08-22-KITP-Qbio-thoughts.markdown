@@ -214,6 +214,81 @@ different parameters to get things to work out. Some thinking about these issues
 would be good, as would getting a handle on some of how different properties
 of analyses scale with parameters/change with algorithms.
 
+
+## Reading list
+
+### Bacteria-phage
+
+[Structure of interactions](http://www.pnas.org/content/108/28/E288.abstract)
+
+[Multiple infections and spatial structure](http://iopscience.iop.org/article/10.1088/1478-3975/13/6/066014/meta)
+
+[Phage-bacteria interaction networks](http://www.sciencedirect.com/science/article/pii/S0966842X12002004)
+
+[Trophic levels and viruses](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4438322/)
+
+[Inferring interactions from time series](http://rsos.royalsocietypublishing.org/content/3/11/160654)
+
+[Nested infection network model](http://www.sciencedirect.com/science/article/pii/S0022519313001641)
+
+[Viral abundance data](https://www.nature.com/articles/nmicrobiol201524)
+
+[HIV analysis](https://elifesciences.org/articles/11282)
+
+[Old E. Coli phage modeling paper](http://www.journals.uchicago.edu/doi/abs/10.1086/283134)
+
+
+### Genome structure
+
+[Model of metabolic network evolution](http://www.pnas.org/content/106/24/9743.short)
+
+[Early paper on clustering (not sure if good)](http://rstb.royalsocietypublishing.org/content/361/1475/1917.short)
+
+[Scaling laws in genomes](https://link.springer.com/content/pdf/10.1007/0-387-33916-7_14.pdf)
+
+
+### Microbial ecology
+
+[Review of community interactions](http://www.sciencedirect.com/science/article/pii/S1369527416300340)
+
+[Succession on microparticles](https://www.nature.com/articles/ncomms11965)
+
+[Species variance driven by habitat in microbiome](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005435)
+
+
+### Ecology modeling
+
+[Tradeoffs and diversity](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.028103)
+
+[Cavity method in resource models](https://arxiv.org/abs/1707.03957)
+
+[Tikhonov resource model](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.048103)
+
+[Bunin community assembly](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.95.042414)
+
+[Renyi entropy as diversity measure](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.93.052418)
+
+### Immunology
+[Well adapted immune organization](http://www.pnas.org/content/112/19/5950.short)
+
+[Evolutionary dynamics of immune system](https://arxiv.org/abs/1703.00226)
+
+### Cell biophysics
+
+Terry Hwa proteom allocation work:
+
+http://msb.embopress.org/content/10/8/747.long
+
+https://thefauve.hwa.ucsd.edu/~thwa/pub/GrowthLaws-CurrOp.pdf
+
+### Fun
+
+[Crispr pop-gen model](http://www.genetics.org/content/205/2/827)
+
+[REPINs (small transposable elements)](http://www.genetics.org/content/early/2017/06/19/genetics.117.201160)
+
+[Minimum entropy production principle](http://bayes.wustl.edu/etj/articles/min.ent.prod.pdf)
+
 ## References
 
 [^otto]: [Chitin community succession](https://www.nature.com/articles/ncomms11965)
@@ -229,77 +304,3 @@ of analyses scale with parameters/change with algorithms.
 [^phageabundance]: [Viral abundance data](https://www.nature.com/articles/nmicrobiol201524)
 
 [^immunecoevo]: [Evolutionary dynamics of immune system](https://arxiv.org/abs/1703.00226)
-
-## Reading list
-
-### Bacteria-phage
-
-Structure of interactions: http://www.pnas.org/content/108/28/E288.abstract
-
-Multiple infections and spatial structure: http://iopscience.iop.org/article/10.1088/1478-3975/13/6/066014/meta
-
-Phage-bacteria interaction networks: http://www.sciencedirect.com/science/article/pii/S0966842X12002004
-
-Trophic levels and viruses: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4438322/
-
-Inferring interactions from time series: http://rsos.royalsocietypublishing.org/content/3/11/160654
-
-Nested infection network model: http://www.sciencedirect.com/science/article/pii/S0022519313001641
-
-Viral abundance data: https://www.nature.com/articles/nmicrobiol201524
-
-HIV analysis: https://elifesciences.org/articles/11282
-
-Old E. Coli phage modeling paper: http://www.journals.uchicago.edu/doi/abs/10.1086/283134
-
-
-### Genome structure
-
-Model of metabolic network evolution: http://www.pnas.org/content/106/24/9743.short
-
-Early paper on clustering (not sure if good): http://rstb.royalsocietypublishing.org/content/361/1475/1917.short
-
-Scaling laws in genomes: https://link.springer.com/content/pdf/10.1007/0-387-33916-7_14.pdf
-
-
-### Microbial ecology
-
-Review of community interactions: http://www.sciencedirect.com/science/article/pii/S1369527416300340
-
-Succession on microparticles: https://www.nature.com/articles/ncomms11965
-
-Species variance driven by habitat in microbiome: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005435
-
-
-### Ecology modeling
-
-Tradeoffs and diversity: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.028103
-
-Cavity method in resource models: https://arxiv.org/abs/1707.03957
-
-Tikhonov resource model: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.048103
-
-Bunin community assembly: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.95.042414
-
-Renyi entropy as diversity measure: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.93.052418
-
-### Immunology
-Well adapted immune organization: http://www.pnas.org/content/112/19/5950.short
-
-Evolutionary dynamics of immune system: https://arxiv.org/abs/1703.00226
-
-### Cell biophysics
-
-Terry Hwa proteom allocation work:
-
-http://msb.embopress.org/content/10/8/747.long
-
-https://thefauve.hwa.ucsd.edu/~thwa/pub/GrowthLaws-CurrOp.pdf
-
-### Fun
-
-Crispr pop-gen model: http://www.genetics.org/content/205/2/827
-
-REPINs (small transposable elements): http://www.genetics.org/content/early/2017/06/19/genetics.117.201160
-
-Minimum entropy production principle: http://bayes.wustl.edu/etj/articles/min.ent.prod.pdf
