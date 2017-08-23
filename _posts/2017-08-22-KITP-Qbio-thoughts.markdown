@@ -297,7 +297,7 @@ Terry Hwa proteom allocation work:
 
 [^walczak]: [Habitat driven variation in microbiome](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005435)
 
-[^metha]: [Cavity method in resource models](https://arxiv.org/abs/1707.03957)
+[^mehta]: [Cavity method in resource models](https://arxiv.org/abs/1707.03957)
 
 [^wingreen]: [Tradeoffs and diversity](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.028103)
 
