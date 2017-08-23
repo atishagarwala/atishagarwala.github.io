@@ -296,7 +296,7 @@ http://msb.embopress.org/content/10/8/747.long
 
 https://thefauve.hwa.ucsd.edu/~thwa/pub/GrowthLaws-CurrOp.pdf
 
-## Fun
+### Fun
 
 Crispr pop-gen model: http://www.genetics.org/content/205/2/827
 
