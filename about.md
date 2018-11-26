@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About me
+permalink: /bio/
 ---
 
 <img src="https://ati.sh/images/atish_headshot.jpg" alt="Atish Agarwala" width="300" />
