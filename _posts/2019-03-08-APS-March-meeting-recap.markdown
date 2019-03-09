@@ -6,8 +6,6 @@ tags: [APS,eco-evo]
 comments: true
 ---
 
-# Thoughts from APS March meeting 2019
-
 Below are some thoughts on my experience at APS March meeting. Ended up missing about a day of it due to my
 hurt ankle, but hopefully I'll cover most of the relevant things that happened.
 
