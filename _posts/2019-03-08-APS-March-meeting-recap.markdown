@@ -43,7 +43,8 @@ that would be worth writing down.
 * Simone Pigolotti on bet hedging: [ref 1](https://arxiv.org/abs/1810.01142),
 [ref 2](https://link.springer.com/article/10.1007/s10955-017-1926-4),
 [ref 3](https://groups.oist.jp/bcu/research)
-* No paper yet on cross-feeding model ,[motivating experiment](http://science.sciencemag.org/content/361/6401/469) (personally don't think it's too
+* No paper yet on cross-feeding model,
+[motivating experiment](http://science.sciencemag.org/content/361/6401/469) (personally don't think it's too
 deep?)
 
 ### Consumer resource models
