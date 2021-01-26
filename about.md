@@ -6,7 +6,7 @@ permalink: /bio/
 
 <img src="https://ati.sh/images/atish_headshot.jpg" alt="Atish Agarwala" width="300" />
 
-I am currently an AI Resident at Google. Previously, I
+I am an AI Resident at Google. Previously, I
 was a physics PhD student at Stanford University advised by 
 [Daniel S. Fisher](https://web.stanford.edu/group/dsfisher/index.html).
 Before that, I studied math and physics as an undergraduate at Swarthmore College.
@@ -26,7 +26,7 @@ Petrov and Sherlock labs at Stanford).
 For more on my PhD work, check out this
 [interview](https://stanfordcehg.wordpress.com/2018/11/19/fellows-feature-atish-agarwala/).
 
-I'm currently an AI Resident at Google, where I've focused on two research areas: understanding machine learning using
+Currently I'm working as an AI Resident at Google, where I've focused on two research areas: understanding machine learning using
 tools from statistical physics, and applying machine learning methods to problems in biology. I'm particularly interested in
 understanding how dynamics affects learning, in both the classical supervised as well as active learning settings. I've done
 theoretical work on proving the learnability of certain function classes with wide neural networks trained via gradient descent.
