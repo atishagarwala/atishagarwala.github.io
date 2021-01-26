@@ -6,36 +6,39 @@ permalink: /bio/
 
 <img src="https://ati.sh/images/atish_headshot.jpg" alt="Atish Agarwala" width="300" />
 
-I am currently a physics PhD student at Stanford University advised by 
+I am currently an AI Resident at Google. Previously, I
+was a physics PhD student at Stanford University advised by 
 [Daniel S. Fisher](https://web.stanford.edu/group/dsfisher/index.html).
-Previously I studied math and physics as an undergraduate at Swarthmore College.
+Before that, I studied math and physics as an undergraduate at Swarthmore College.
 
-My research area is, broadly speaking, theoretical biology. During my PhD, I've primarily studied evolution - trying
+My PhD research area was, broadly speaking, theoretical biology. During my PhD, I primarily studied evolution - trying
 to understand how different dynamical processes combine to give evolutionary dynamics, and to characterize things like the
-speeed and predictability of evolution. I've worked on analyzing data from experimental evolution, and developed robust 
-methods
+speeed and predictability of evolution. I worked on understanding theoretical models of evolution on _random fitness landscapes_
+to understand the complexities of evolution in various biologically plausible scenarios. Towards the end of my PhD, I worked
+on the intersection of ecology and evolution - using modeling and simulation to show that diversity can be maintained
+_dynamically_ through interactions between host and pathogens.
+
+In addition to my theoretical work, I've worked on analyzing data from experimental evolution, and developed robust methods
 of inferring fitness from abundance data (code [here](https://github.com/barcoding-bfa/fitness-assay-python)). I used my
 code to understand the nature of fitness gains in glucose limited yeast (in collaboration with experimentalists from the 
 Petrov and Sherlock labs at Stanford).
 
-Most of my work consists of building mathematical models of different evolutionary scenarios, and trying to understand them
-both quantitatively and qualitatively. I studied evolution in the presence of epistasis (interactions
-between the effects of mutations) by developing a class of _random fitness landscapes_ to model the complexities of fitness
-in real biological systems. I derived a computational and analytical framework to understand the stochastic
-dynamics quantitatively in the low-mutation rate regime, and showed how evolution now is heavily conditioned on past 
-evolution. I'm currently working at the intersection of ecology and evolution, trying to understand how host-pathogen
-interactions and spatial structure might stabilize the within-species diversity found in even well-mixed microbial
-ecosystems.
+For more on my PhD work, check out this
+[interview](https://stanfordcehg.wordpress.com/2018/11/19/fellows-feature-atish-agarwala/).
 
-I'm also interested in theoretical neuroscience and theoretical machine learning. I want to understand the scaling
-laws of neural systems - how various geometric and dyamical quantities change with network size, neural statistics, learning
-rates, and other network/dynamical parameters. In 2018 I did a research internship at
-Google Brain, studying early learning dynamics with mean field theory to try and understand the performance of
-different initialization statistics.
+I'm currently an AI Resident at Google, where I've focused on two research areas: understanding machine learning using
+tools from statistical physics, and applying machine learning methods to problems in biology. I'm particularly interested in
+understanding how dynamics affects learning, in both the classical supervised as well as active learning settings. I've done
+theoretical work on proving the learnability of certain function classes with wide neural networks trained via gradient descent.
+I've also studied the learning dynamics of networks trained with cross-entropy loss with a combination of theory and experiment,
+showing that the softmax temperature can be tuned to improve network performance.
 
-For more on my background, check out this
-[interview](https://stanfordcehg.wordpress.com/2018/11/19/fellows-feature-atish-agarwala/)
-conducted as part of my CEHG fellowship.
+More recently, I've been applying my knowledge of evolution to understand and improve protein design. High-throughput
+sequencing-based assays can be combined with modern machine learning methods to explore the space of amino acid sequences
+to efficiently improve the function of proteins of interest. However, not much is understood about what sorts of data should be
+taken, and how sequences should be selected from models. I'm currently using in-silico fitness landscapes to experiment
+on the design process itself, and to understand how landscape properties translate to effective design strategies.
+
 
 Links:
 
