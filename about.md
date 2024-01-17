@@ -46,4 +46,4 @@ Links:
 
 [Google scholar](https://scholar.google.com/citations?user=yCeAZUoAAAAJ&hl=en)
 
-[CV](https://ati.sh/atishagarwalacv.pdf)
+[CV](https://ati.sh/atish_cv.pdf)
