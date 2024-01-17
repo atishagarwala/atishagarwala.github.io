@@ -6,7 +6,8 @@ permalink: /bio/
 
 <img src="https://ati.sh/images/atish_headshot.jpg" alt="Atish Agarwala" width="300" />
 
-I am an AI Resident at Google. Previously, I
+I am currently a research scientist at Google Deep Mind. I came to Google via the AI Residency,
+cohort year 2019. Previously, I
 was a physics PhD student at Stanford University advised by 
 [Daniel S. Fisher](https://web.stanford.edu/group/dsfisher/index.html).
 Before that, I studied math and physics as an undergraduate at Swarthmore College.
@@ -26,18 +27,19 @@ Petrov and Sherlock labs at Stanford).
 For more on my PhD work, check out this
 [interview](https://stanfordcehg.wordpress.com/2018/11/19/fellows-feature-atish-agarwala/).
 
-Currently I'm working as an AI Resident at Google, where I've focused on two research areas: understanding machine learning using
-tools from statistical physics, and applying machine learning methods to problems in biology. I'm particularly interested in
-understanding how dynamics affects learning, in both the classical supervised as well as active learning settings. I've done
-theoretical work on proving the learnability of certain function classes with wide neural networks trained via gradient descent.
-I've also studied the learning dynamics of networks trained with cross-entropy loss with a combination of theory and experiment,
-showing that the softmax temperature can be tuned to improve network performance.
+I'm currently a research scientist at Google Deep Mind, where my primary focus is on understanding optimization
+and generalization in machine learning models through the lens of dynamical systems. A majority of my work focuses on
+understanding the feedback between choices made during the learning process (optimizer choice, hyperparameters, data preprocessing,
+batch size) and the evolution of the local loss landscape geometry. I tend to focus on phenomena which show up robustly
+across models and datasets, with an eye towards understanding them in the high-dimensional limit (both model size and
+dataset size). I employ a mix of theoretical modeling inspired by simple dynamical systems and numerical experiments
+to gain insights which are robust and relevant at scale. I have a secondary interest in understanding how optimization choices
+are linked with feature learning and other types of inductive bias.
 
-More recently, I've been applying my knowledge of evolution to understand and improve protein design. High-throughput
-sequencing-based assays can be combined with modern machine learning methods to explore the space of amino acid sequences
-to efficiently improve the function of proteins of interest. However, not much is understood about what sorts of data should be
-taken, and how sequences should be selected from models. I'm currently using in-silico fitness landscapes to experiment
-on the design process itself, and to understand how landscape properties translate to effective design strategies.
+I also maintain an active interest in the intersection of machine learning and theoretical biology. Previously at Google I
+worked on creating benchmarks for protein design. This work involved generating synthetic, data-inspired
+fitness landscapes using insights from statistical physics and bioinformatics. I'm currently developing ML methods for
+use in theoretical biology.
 
 
 Links:
